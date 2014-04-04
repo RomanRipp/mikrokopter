@@ -1,0 +1,22 @@
+<package>
+  <description brief="mk_simulations">
+
+     mk_simulations
+
+  </description>
+  <author>Roman Ripp</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/mk_simulations</url>
+  <depend package="ssx"/>
+  <depend package="ssx_framework"/>
+  <depend package="ssx_ext_DebugDrawing"/>
+  <depend package="ssx_ext_ROSModule"/>
+  <depend package="ssx_med_core"/>
+  <depend package="roscpp"/>
+  <depend package="tf"/>
+  <depend package="armadillo_wrapper"/>
+  <depend package="mk_msgs"/>
+</package>
+
+

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/rsn-svn/!svn/ver/2369/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/srv
+END
+SetLanding.srv
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/rsn-svn/!svn/ver/2369/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/srv/SetLanding.srv
+END
+SetNavigation.srv
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/rsn-svn/!svn/ver/2369/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/srv/SetNavigation.srv
+END
+SetTakeoff.srv
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/rsn-svn/!svn/ver/2369/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/srv/SetTakeoff.srv
+END
+GetRendezvousPoint.srv
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/rsn-svn/!svn/ver/2369/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/srv/GetRendezvousPoint.srv
+END
+SetGPSWaypoint.srv
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/rsn-svn/!svn/ver/2369/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/srv/SetGPSWaypoint.srv
+END
+listwp.srv
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/rsn-svn/!svn/ver/2369/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/srv/listwp.srv
+END
+SetSerialPoti.srv
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/rsn-svn/!svn/ver/2369/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/srv/SetSerialPoti.srv
+END

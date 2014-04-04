@@ -1,0 +1,112 @@
+<Config>
+	<general>
+		<!-- matrices are row-major! elements are separated by spaces, rows ended with a semicolon -->
+		<!-- just like MATLAB! -->
+		<!-- vectors are column-vectors -->
+		<CorrectionMatrix Value="1 0 0; 0 0 1; 0 -1 0" />
+		<!-- Gravity is defined w.r.t. the new reference frame, after applying the correctionMatrix above -->
+		<Gravity Value="0 0 9.81" />
+		<!-- only use only an absolute path here, things like ~ etc. will not work! -->
+		<ArtifactFolder Value="$basedir/share/SwarmSimX/Artifacts" />
+         <Scene Value="$basedir/share/SwarmSimX/Scenes/CopterAndTheTree.xml" /> 
+	</general>
+	<extensions>
+ 		<Extension Value="ROSModule">
+ 			<Config Name="ROSModule" ROSNrThreads="4" ROSNodeName="SwarmSimX" ROSBaseName="TeleKyb"></Config>
+ 		</Extension>
+ 		<Extension Value="DebugDrawing">
+ 			<Config Name="DebugDrawing"
+ 			RenderDebug="true"
+    		
+ 			RenderDebugVisual="true"
+ 			RenderVisualRefFrames="true"
+    		
+ 			RenderDebugPhysics="true"
+ 			RenderPhysicsRefFrames="true"
+ 			RenderPhysicsShapes="true"></Config>
+ 		</Extension> -->
+	</extensions>
+    <physics>
+        <SimulationTimestep Value="0.02" />
+
+        <NumSolverThreads Value="4" />
+        <!-- currently not used -->
+        <NX_SKIN_WIDTH Value="0.0001" />
+        
+        <Px_Scale Value="1" />
+        <!-- visualize the world ref-frame -->
+        <Px_World_Axes Value="1" />
+        <!-- visualize ref-frame in actor-center -->
+        <Px_Actor_Axes Value="1" />
+        <!-- visualize ref-frame in body-center(center of gravity) -->
+        <Px_Body_Axes Value="0" />
+        <!-- axis-aligned-bounding-boxes of the shapes -->
+        <Px_Collision_AABBs Value="0" />
+        <!-- dont know? -->
+        <Px_Body_Mass_Axes Value="0" />
+        <!-- visualize shapes -->
+        <Px_Collision_Shapes Value="1" />
+        <!-- reference-frame of the shapes -->
+        <Px_Collision_Axes Value="0" />
+        <!-- local reference-frame of joints -->
+        <Px_Joint_Frames Value="1" />
+        <!-- joint limits -->
+        <Px_Joint_Limits Value="1" />
+    </physics>
+    <rendering>
+    	<OgreConfig Value="$basedir/share/SwarmSimX/Config/ogre.cfg"></OgreConfig>
+		<MainCamStartPos Value="-20 -10 -5"></MainCamStartPos>
+		<MainCamLookAtPos Value="0 0 -5"></MainCamLookAtPos>
+		
+		<MainCamNearClipDistance Value="0.01"></MainCamNearClipDistance>
+		<MainCamFarClipDistance Value="6000"></MainCamFarClipDistance>
+		<ShadowEnable Value="false"></ShadowEnable>
+		<ShadowTechnique Value="SHADOWTYPE_STENCIL_ADDITIVE"></ShadowTechnique>
+		<ShadowColor Value="0.5 0.5 0.5"></ShadowColor>
+    </rendering>
+    <media>
+    	<resource section="Essential" type="Zip" Value="$basedir/share/SwarmSimX/media/SdkTrays.zip"></resource>
+    	<resource section="General" type="FileSystem" Value="$basedir/share/SwarmSimX/media/"></resource>
+    	<resource section="General" type="FileSystem" Value="$basedir/share/SwarmSimX/media/Quadcopter"></resource>
+    	<resource section="Skyboxes" type="FileSystem" Value="$basedir/share/SwarmSimX/media/Skyboxes"></resource>
+    	<resource section="Skyboxes" type="Zip" Value="$basedir/share/SwarmSimX/media/Skyboxes/bones_of_earth.zip"></resource>
+    	<resource section="Skyboxes" type="Zip" Value="$basedir/share/SwarmSimX/media/Skyboxes/borderwood_cloudy_day.zip"></resource>
+    	<resource section="Skyboxes" type="Zip" Value="$basedir/share/SwarmSimX/media/Skyboxes/dragontooth_ridge_day.zip"></resource>
+    	<resource section="Skyboxes" type="Zip" Value="$basedir/share/SwarmSimX/media/Skyboxes/glacier.zip"></resource>
+    	<resource section="Skyboxes" type="Zip" Value="$basedir/share/SwarmSimX/media/Skyboxes/GlacierNight.zip"></resource>
+    	<resource section="Skyboxes" type="Zip" Value="$basedir/share/SwarmSimX/media/Skyboxes/grey_mountains_day.zip"></resource>
+    	<resource section="Skyboxes" type="Zip" Value="$basedir/share/SwarmSimX/media/Skyboxes/grey_mountains_night.zip"></resource>
+    	<resource section="Skyboxes" type="Zip" Value="$basedir/share/SwarmSimX/media/Skyboxes/japan.zip"></resource>
+    	<resource section="Skyboxes" type="Zip" Value="$basedir/share/SwarmSimX/media/Skyboxes/mountain_ring.zip"></resource>
+    	<resource section="Skyboxes" type="Zip" Value="$basedir/share/SwarmSimX/media/Skyboxes/rabbit_land.zip"></resource>
+    </media>
+    <classloader>
+    	<ModuleDirDriver Value="$basedir/lib/Drivers" />
+    	<ModuleDirSensor Value="$basedir/lib/Sensors" />
+    	<ModuleDirExtension Value="$basedir/lib/Extensions" />
+    	<ModulePrefix Value="lib" />
+    	<ModulePostfix Value=".so" />
+    </classloader>
+    <debug>
+    	<!-- not used currently -->
+        <RemoteDebug Value="false" />
+        <RemoteDebugHost Value="10.38.128.119" />
+        <RemoteDebugPort Value="5425" />
+        
+    	<RenderEngineDebugPrint Value="false" />
+    	
+    	<DebugFileFolder Value="/dev/shm/SwarmSimXDebug/" />
+    	
+        <EnableShellDebugLogger Value="true"></EnableShellDebugLogger>
+        <EnableShellInfoLogger Value="true"></EnableShellInfoLogger>
+        <EnableShellWarningLogger Value="true"></EnableShellWarningLogger>
+        <EnableShellErrorLogger Value="true"></EnableShellErrorLogger>
+        <EnableShellFatalLogger Value="true"></EnableShellFatalLogger>
+        
+        <EnableFileDebugLogger Value="true"></EnableFileDebugLogger>
+        <EnableFileInfoLogger Value="true"></EnableFileInfoLogger>
+        <EnableFileWarningLogger Value="true"></EnableFileWarningLogger>
+        <EnableFileErrorLogger Value="true"></EnableFileErrorLogger>
+        <EnableFileFatalLogger Value="true"></EnableFileFatalLogger>
+    </debug>
+</Config>

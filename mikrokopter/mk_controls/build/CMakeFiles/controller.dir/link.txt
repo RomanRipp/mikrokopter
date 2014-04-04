@@ -1,0 +1,1 @@
+/usr/bin/c++   -O2 -g     -pthread CMakeFiles/controller.dir/src/pidcontroller.o  -o ../bin/controller -rdynamic 

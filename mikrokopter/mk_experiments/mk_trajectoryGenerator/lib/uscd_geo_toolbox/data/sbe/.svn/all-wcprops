@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/data/sbe
+END
+read_hex.m
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/data/sbe/read_hex.m
+END
+read_sbe.m
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/data/sbe/read_sbe.m
+END
+Comments.txt
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/data/sbe/Comments.txt
+END
+sbe_condcomp.m
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/data/sbe/sbe_condcomp.m
+END
+sbe_cond.m
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/data/sbe/sbe_cond.m
+END
+Contents.m
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/data/sbe/Contents.m
+END

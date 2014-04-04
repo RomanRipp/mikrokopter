@@ -1,0 +1,342 @@
+<Scene>
+	<Artifact FileName="SkyBox.xml">
+	</Artifact>
+	<Artifact FileName="MainLights.xml">
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor00">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="0 0 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor01">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="1 0 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor02">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="2 0 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor03">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="3 0 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor04">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="0 1 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor05">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="1 1 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor06">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="2 1 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor07">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="3 1 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor08">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="0 2 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor09">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="1 2 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor10">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="2 2 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor11">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="3 2 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor12">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="0 3 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor13">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="1 3 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor14">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="2 3 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor15">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="3 3 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor16">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="0 4 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor17">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="1 4 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor18">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="2 4 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor19">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="3 4 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor20">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="0 5 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor21">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="1 5 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor22">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="2 5 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor23">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="3 5 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor24">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="0 6 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor25">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="1 6 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor26">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="2 6 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor27">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="3 6 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor28">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="0 7 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor29">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="1 7 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor30">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="2 7 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor31">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="3 7 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor32">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="0 8 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor33">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="1 8 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor34">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="2 8 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor35">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="3 8 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor36">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="0 9 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor37">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="1 9 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor38">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="2 9 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor39">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="3 9 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+<!-- 	<Artifact FileName="Quadrotor.xml" Name="Quadrotor40"> -->
+<!-- 		<Driver></Driver> -->
+<!-- 		<Visual></Visual> -->
+<!-- 		<Physical> -->
+<!-- 			<Config Position="0 10 -0.5"></Config> -->
+<!--  		</Physical> -->
+<!-- 	</Artifact> -->
+<!-- 	<Artifact FileName="Quadrotor.xml" Name="Quadrotor41"> -->
+<!-- 		<Driver></Driver> -->
+<!-- 		<Visual></Visual> -->
+<!-- 		<Physical> -->
+<!-- 			<Config Position="1 10 -0.5"></Config> -->
+<!--  		</Physical> -->
+<!-- 	</Artifact> -->
+<!-- 	<Artifact FileName="Quadrotor.xml" Name="Quadrotor42"> -->
+<!-- 		<Driver></Driver> -->
+<!-- 		<Visual></Visual> -->
+<!-- 		<Physical> -->
+<!-- 			<Config Position="2 10 -0.5"></Config> -->
+<!--  		</Physical> -->
+<!-- 	</Artifact> -->
+<!-- 	<Artifact FileName="Quadrotor.xml" Name="Quadrotor43"> -->
+<!-- 		<Driver></Driver> -->
+<!-- 		<Visual></Visual> -->
+<!-- 		<Physical> -->
+<!-- 			<Config Position="3 10 -0.5"></Config> -->
+<!--  		</Physical> -->
+<!-- 	</Artifact> -->
+<!-- 	<Artifact FileName="Quadrotor.xml" Name="Quadrotor0"> -->
+<!-- 		<Driver></Driver> -->
+<!-- 		<Visual></Visual> -->
+<!-- 		<Physical> -->
+<!-- 			<Config Position="0 11 -0.5"></Config> -->
+<!--  		</Physical> -->
+<!-- 	</Artifact> -->
+<!-- 	<Artifact FileName="Quadrotor.xml" Name="Quadrotor1"> -->
+<!-- 		<Driver></Driver> -->
+<!-- 		<Visual></Visual> -->
+<!-- 		<Physical> -->
+<!-- 			<Config Position="1 11 -0.5"></Config> -->
+<!--  		</Physical> -->
+<!-- 	</Artifact> -->
+<!-- 	<Artifact FileName="Quadrotor.xml" Name="Quadrotor1"> -->
+<!-- 		<Driver></Driver> -->
+<!-- 		<Visual></Visual> -->
+<!-- 		<Physical> -->
+<!-- 			<Config Position="2 11 -0.5"></Config> -->
+<!--  		</Physical> -->
+<!-- 	</Artifact> -->
+<!-- 	<Artifact FileName="Quadrotor.xml" Name="Quadrotor0"> -->
+<!-- 		<Driver></Driver> -->
+<!-- 		<Visual></Visual> -->
+<!-- 		<Physical> -->
+<!-- 			<Config Position="3 11 -0.5"></Config> -->
+<!--  		</Physical> -->
+<!-- 	</Artifact> -->
+</Scene>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/rsn-svn/!svn/ver/2367/code/umn-ros-pkg/rsn/mikrokopter/mk_driver/src
+END
+EarthCoords.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/rsn-svn/!svn/ver/2367/code/umn-ros-pkg/rsn/mikrokopter/mk_driver/src/EarthCoords.cpp
+END
+control.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/rsn-svn/!svn/ver/2367/code/umn-ros-pkg/rsn/mikrokopter/mk_driver/src/control.cpp
+END
+driver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/rsn-svn/!svn/ver/2367/code/umn-ros-pkg/rsn/mikrokopter/mk_driver/src/driver.cpp
+END

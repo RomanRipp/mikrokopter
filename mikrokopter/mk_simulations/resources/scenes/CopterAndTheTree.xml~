@@ -1,0 +1,20 @@
+<Scene>
+	<Artifact FileName="SkyBox.xml">
+	</Artifact>
+	<Artifact FileName="MainLights.xml">
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor00">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="0 0 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Tree.xml" Name="Tree00">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="1 1 0"></Config>
+ 		</Physical>
+	</Artifact>
+</Scene>

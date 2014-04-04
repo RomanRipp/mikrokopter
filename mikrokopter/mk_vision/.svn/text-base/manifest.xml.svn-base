@@ -1,0 +1,24 @@
+<package>
+  <description brief="mk_vision">
+
+     mk_vision
+
+  </description>
+  <author>Roman</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>   
+  <rosdep name="glut"/>
+  <depend package="visualization_msgs"/>
+  <depend package="artoolkit"/>
+  <depend package="geometry_msgs"/>
+  <depend package="tf"/>
+  <depend package="resource_retriever"/>
+  <depend package="opencv2"/>
+  <depend package="image_transport"/>
+  <depend package="cv_bridge"/>
+  <depend package="ar_pose"/>
+</package>
+
+

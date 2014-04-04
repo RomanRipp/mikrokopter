@@ -1,0 +1,41 @@
+<Scene>
+	<Artifact FileName="SkyBox.xml">
+	</Artifact>
+	<Artifact FileName="MainLights.xml">
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor00">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="0 0 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor01">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="1 0 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor02">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="2 0 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor03">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="3 0 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+	<Artifact FileName="Quadrotor.xml" Name="Quadrotor04">
+		<Driver></Driver>
+		<Visual></Visual>
+		<Physical>
+			<Config Position="0 1 -0.5"></Config>
+ 		</Physical>
+	</Artifact>
+</Scene>

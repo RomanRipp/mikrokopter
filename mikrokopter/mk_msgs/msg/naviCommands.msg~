@@ -1,0 +1,18 @@
+Header header
+
+# between -pi to +pi
+int32 longitude
+int32 latitude
+int32 altitude
+int32 heading
+int32 toleranceRadius
+int32 holdTime
+int32 index
+int32 eventChannel
+int32 altitudeRate
+int32 speed
+int32 status
+int32 eventFlag
+int32 type
+int32 camAngle
+

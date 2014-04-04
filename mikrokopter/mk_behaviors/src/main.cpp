@@ -1,0 +1,12 @@
+#include <iostream>
+#include <ros/ros.h>
+#include <mk_behaviors/statemachine.h>
+
+int main(int argc, char** argv) {
+
+	ros::init(argc,argv,"mk_behaviors");
+	StateMachine sm;
+	sm.start(); // blocking
+
+	return 0;
+}

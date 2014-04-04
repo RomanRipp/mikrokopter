@@ -1,0 +1,8 @@
+<Artifact Name="Quadrotor">
+	<Visual Name="QR" Type="Mesh">
+		<Config Position="0 0 -1" Orientation="1 0 0; 0 1 0; 0 0 1"></Config>
+		<Visual Name="Body" Type="Mesh">
+			<Config MeshName="Trees/tree1_3ds/Tree1.3ds" Position="0 0 0" Orientation="1 0 0; 0 0 1; 0 -1 0"></Config>
+		</Visual>
+	</Visual>
+</Artifact>

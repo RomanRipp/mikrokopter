@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb
+END
+t_getconsts.m
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/t_getconsts.m
+END
+Contents.m
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/Contents.m
+END
+t_errors.m
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/t_errors.m
+END
+t_signal.m
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/t_signal.m
+END
+t_xtide.m
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/t_xtide.m
+END
+t_example.mat
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/t_example.mat
+END
+t_demo.m
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/t_demo.m
+END
+Comments.txt
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/Comments.txt
+END
+t_constituents.mat
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/t_constituents.mat
+END
+t_tidecb.m
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/t_tidecb.m
+END
+t_equilib.m
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/t_equilib.m
+END
+t_readme.m
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/t_readme.m
+END
+t_vuf.m
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/t_vuf.m
+END
+tide3.dat
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/tide3.dat
+END
+t_xtide.mat
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/t_xtide.mat
+END
+t_xstat.m
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/t_xstat.m
+END
+t_synth.m
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/t_synth.m
+END
+t_predic.m
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/t_predic.m
+END
+t_equilib.dat
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/t_equilib.dat
+END
+t_astron.m
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/t_tidecb/t_astron.m
+END

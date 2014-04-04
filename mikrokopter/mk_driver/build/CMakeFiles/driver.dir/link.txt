@@ -1,0 +1,1 @@
+/usr/bin/c++   -O2 -g     -pthread CMakeFiles/driver.dir/src/driver.o CMakeFiles/driver.dir/src/EarthCoords.o  -o ../bin/driver -rdynamic -L/opt/ros/fuerte/lib -lroscpp -lrostime -lrosconsole -lroscpp_serialization -lxmlrpcpp -lboost_thread-mt -Wl,-rpath,/opt/ros/fuerte/lib 

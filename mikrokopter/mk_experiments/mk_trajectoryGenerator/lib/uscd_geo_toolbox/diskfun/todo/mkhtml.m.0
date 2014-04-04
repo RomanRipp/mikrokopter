@@ -1,0 +1,496 @@
+function mkhtml(pfad,dst,opt,name,mp,cp)
+
+% Makes HTML of Help
+%
+% MKHTML( Pfad , Ziel , Depth , Name , Option, Exclude )
+%
+% default: Depth = 2
+%
+%           0: Pfad Only
+%         NaN: All
+%
+% default: Name = Last Name of Pfad
+%
+% Option:  'l'  follow Links (no default)
+%          'o'  Full List of ObjectMethods
+%
+% Exclude: DirNames to exclude
+%
+% Don't List private Directories but mark in Title!!!
+% Don't List files with No Help
+%
+% Check for "see also", follow to end or '---' | '***' | '@@@'
+%
+% Check Files of "see also" first in same Directory
+%
+% Create 1 single HTML with HelpText for each Directory,
+%  where valid Files found!
+%  Contents with FirstHelpLine
+%  Helptexts with Refrence of "see also"
+%
+% Sort DirNames by Length and Alphabetic
+%
+% Sort FileNames Alpabetic
+%
+% List ObjectCreator first if ObjectDir !!! 
+%
+%************************************************
+% <h1> Name
+%
+% Contents
+%
+%------------------------------------------------
+% <h2> Sub1  (private)                    see all  top
+%
+%      - File1  First HelpLine
+%        ...
+%
+%      ------------------------------------------
+%      Sub1/SubSub1 (private)             see all  top
+%
+%      - File1 ...
+%
+%      ------------------------------------------
+%      Sub1/SubSub1/SubSubSub1 (private)  see all  top
+%
+%        ...
+%
+%      ------------------------------------------
+%      Sub1/SubSub2 (private)
+%      ------------------------------------------
+%
+%        ...
+%
+%------------------------------------------------
+% <h2> Sub2  (private)                    see all
+%
+%      - File1  First HelpLine
+%        ...
+%
+%        ...
+%
+%*************************************************
+% 
+%
+% FileList: FileName SubDirName [ Sub1 SubN ] FirstHelpLine HelpText
+%  DirList: SubDirName [ Sub1 SubN ] {Subs}
+%
+%
+
+% MKCONT  Creates "Contents.m"- File of Directory
+%
+% MKCONT( Directory , [Option] , [Prefix] )
+%
+% Option = '-r' | '-rl'  
+%
+%          '-r'   works recursivly
+%          '-rl'  works recursivly, follow Links
+%
+% First Line of "Contents.m":
+%
+% %# Contents of Directory "[Prefix]/DirName/SubDir/..."
+%
+%  see also:  DIRCONT
+%
+
+pre = '%# Contents of Directory "';
+suf = '"';
+prf = '%   ';
+sep = '  - ';
+
+ntf = 'No help comments found';
+
+file = 'Contents.m';
+alt  = 'Content.m';
+
+fs = filesep;
+ps = pathsep;
+
+if nargin < 5
+   mp = matlabpath;
+   cp = seperate(mp,ps);
+end
+
+%--------------------------------------------
+
+if nargin < 1
+   pfad = '';
+end
+
+if nargin < 2
+   opt = '';
+end
+
+lnk = 0;
+rec = ~isempty(opt);
+if rec
+   rec = ( isequal(opt,'-r') | isequal(opt,'-rl') );
+   if rec
+      lnk = isequal(opt(end),'l');
+   end
+end
+
+if nargin < 3
+   name = '';
+end
+
+%--------------------------------------------
+% Try to get absolute Pfad, Ziel
+
+fs = filesep;
+
+if isempty(pfad)
+   pfad = cd;;
+end
+
+if ~( exist(pfad,'dir') == 7 )
+    error('Directory doesn''t exist.');
+end
+
+% Absolute Path !!!
+
+p0 = cd;
+
+try
+   cd(pfad);
+   pfad = cd;
+end
+
+cd(p0);
+   
+%-------------------------------------------------------------
+
+pfad = cat( 2 , pfad , fs(1:(end*(~strcmp(pfad(end),fs)))) );
+
+pfd  = pfad(1:(end-1));
+
+pname = pfd;
+
+ii = find( double(pname) == double(fs) );
+if ~isempty(ii)
+   pname = pname(max(ii+1):end);
+end
+
+name = cat( 2 , name , fs(1:(end*(~isempty(name)))) , pname );
+
+%-------------------------------------------------------------
+
+fprintf(1,'%s',pfad);
+
+%-------------------------------------------------------------
+
+dd = dir(pfad);
+
+if isempty(dd)
+   fprintf(1,'   can''t read Directory\n')
+   return
+end
+
+dd = dd(find(cat(1,dd.isdir)));
+
+dd = { dd.name };
+
+dd = dd(find(~( strcmp(dd,'.') | strcmp(dd,'..') )));
+
+%-------------------------------------------------------------
+% Look for M-Files
+
+d = dir(cat(2,pfad,'*.m'));
+
+if ~isempty(d)
+    d = d(find(~cat(1,d.isdir)));
+end
+
+if isempty(d)
+
+   msg = 'no M-Files found';
+
+else
+
+   % Check if PFAD in MatlabPath !!!
+   %  to work correct using HELP
+
+   ok = any(strcmp(cp,pfd));
+   if ~ok
+       matlabpath(cat(2,mp,ps,pfd));
+   end
+
+   msg = wrt_cont(pfad,file,alt,{d.name},name,pre,suf,prf,sep,ntf);
+
+   if ~ok
+       matlabpath(mp);
+   end
+
+end
+
+fprintf(1,'   %s\n',msg);
+
+%-------------------------------------------------------------
+% Recurse
+
+if ~rec | isempty(dd)
+    return
+end
+
+dd = sort(dd);
+
+for d = dd(:)'
+ 
+    p = cat(2,pfad,d{1});
+
+    ok = ( lnk | ~isunix );
+    if ~ok
+        l  =  ls('-ld',p);  % Without FileSep at End !!!
+        ok = ~isequal(l(1),'l');
+    end
+
+    if ok
+       mkcont( p , opt , name , mp , cp );
+    end
+
+end
+
+%**************************************************************
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+function msg = wrt_cont(pfad,file,alt,d,name,pre,suf,prf,sep,ntf)
+
+msg = '';
+
+n = prod(size(d));
+
+d = sort(d);
+
+str = cell(n,1);
+
+n2 = size(char(d),2) - 2;   % Max Length of FileNames
+
+fc = 'function';
+nc = size( fc , 2 );
+
+nl = char(10);
+
+ok = zeros(n,1);
+
+for ii = 1 : n
+
+    f = lower(d{ii});
+
+    ok(ii) = ( ~isempty(f) & ~strcmp(f,lower(file)) );
+
+    if ok(ii)
+        
+        f = f( 1 : end-2 );
+
+        nf = size(f,2);
+
+        try
+          txt = help( cat(2,pfad,f) );  % Works only if PFAD in MatlabPath !!!
+        catch
+          txt = '';
+        end
+
+        if ~isempty(txt)
+
+            %-----------------------------------------------
+            % Extract first HelpLine
+
+            txt = cat( 2 , double( rmblank(txt,2) ) , 10 );
+
+            txt( find( txt == 13 ) ) = [];
+
+            txt = txt( 1 : min( find( txt == 10 ) ) - 1 );
+
+            txt = char(txt);
+
+            if ~isempty(txt)
+                txt = txt( 1 : (end-strcmp(txt(end),'.')) );
+            end
+
+            %-----------------------------------------------
+            % Remove FunctionName in Help
+         
+            nt = size(txt,2);
+
+            if ~isempty(txt) & ( nt >= nf )
+                if strcmp( lower(txt(1:nf)) , f )  &  ...
+                  ~strcmp( txt(min(nt,nf+1)) , '(' )
+                   txt = rmblank( txt( nf+1 : end ) );
+                end
+            end
+
+        end
+        % ~isempty(txt)
+
+        if ~isempty(txt)
+
+            %-----------------------------------------------
+            % Check for FUNCTION-Statement in Help
+
+            gd = ( size(txt,2) < nc );
+            if ~gd
+                gd = ~strcmp( txt(1:nc) , fc );
+            end
+
+            if gd
+               txt(1) = upper(txt(1));
+            end
+
+        else
+
+            txt = ntf;
+
+        end
+
+        %----------------------------------------------------- 
+
+        str{ii} =  cat( 2 , prf , f , char(32*ones(1,n2-nf)) , sep , txt , nl );
+
+    end
+    % ok
+
+end
+% ii
+
+if ~any( ok == 1 )
+    msg = 'no Help found';
+    return
+end
+
+chk = chkfile(pfad,file,pre);
+if ~chk
+    msg = sprintf('%s allready exist',file);
+    c = -1;
+    while ~chk & ( c < 9 )          
+       c = c + 1;      
+       file = sprintf('%s%.0f%s',file(1:end-2),c,file(end-1:end));
+       chk = chkfile(pfad,file,pre);
+    end
+    if ~chk
+        return
+    else
+        fprintf(1,'   %s, write %s',msg,file);
+        msg = '';
+    end
+end
+
+
+%********************************************************+
+% Write File
+
+fid = fopen( cat(2,pfad,file) , 'wt' );
+
+if fid == -1
+   msg = sprintf('can''t open%s',file);
+else
+   fprintf(fid,'%s%s%s\n%s\n%s%s\n',pre,name,suf,prf,cat(2,str{find(ok)}),prf);
+   fclose(fid);
+   msg = sprintf('%.0f files',sum(ok));
+end
+
+
+%**************************************************************
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+function ok = chkfile(pfad,file,pre)
+
+ok = 0;
+
+file = cat(2,pfad,file);
+
+if ( exist(file,'dir')  == 7 )
+   return
+end
+
+ok = ~( exist(file,'file') == 2 );
+if ok
+   return
+end
+
+
+fid = fopen(file,'r');
+
+if ( fid == -1 )
+   return
+end
+
+
+bb = fread(fid,size(pre,2),'char');
+ok = isequal(char(bb(:)'),pre);
+
+fclose(fid);
+
+
+%**************************************************************
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+function str = seperate(name,sep);
+
+% SEPERATE  separates Name
+%
+% String = SEPERATE( Name , Seperator )
+%
+%
+
+
+str = cell(1,0);
+
+if isempty(name)
+   return
+end
+
+n = size(name,2);
+
+%---------------------------------------------
+% Find Seperator in Name
+
+is = ( double(name) == double(sep) );
+
+if all(is)
+   str    = cell(1,n-1);
+   str(:) = { '' };
+   return
+end
+
+%---------------------------------------------
+
+i0 = ~is(1);
+i1 = ~is(n);
+
+is = cat( 2 , ones(1,i0) , is , ones(1,i1) );
+
+is = find( is );
+
+is = is(:);
+
+ni = size(is,1) - 1;
+
+if ni == 0 
+   return
+end
+     
+%---------------------------------------------
+% [ Start  End ]
+
+ind = ( 1 : ni ) ;
+
+is  = cat( 2 , is(ind)+1 , is(ind+1)-1 ) - i0;
+
+%---------------------------------------------
+
+ni = size(is,1);
+
+if ni == 0
+   return
+end
+
+%---------------------------------------------
+   
+is = is(1:ni,:);
+
+str = cell(1,ni);
+  
+for ii = 1 : ni
+    str{ii} = name( is(ii,1) : is(ii,2) );
+end
+

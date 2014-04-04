@@ -1,0 +1,52 @@
+<Artifact Name="Quadrotor">
+	<Driver Name="QRPosCtrlDriver">
+		<Config PhysicalName="Frame" KP="4" KD="8" KI="0" enableDrawing="false" DesiredPos="0 0 -10" CollAvoidEnabled="true"></Config>
+	</Driver>
+	<Visual Name="QR" Type="Mesh">
+		<Config Position="0 0 -1" Orientation="1 0 0; 0 1 0; 0 0 1"></Config>
+		<Visual Name="Body" Type="Mesh">
+			<Config MeshName="Quadcopter/Quadcopter.mesh" Position="0 0 0" Orientation="1 0 0; 0 0 1; 0 -1 0"></Config>
+		</Visual>
+<!-- 		<Visual Name="Propeller1" Type="Mesh"> -->
+<!--             <Config MeshName="Quadcopter/Propeller.mesh" Position="0.24 0 -0.042" Orientation="1 0 0; 0 0 -1; 0 1 0"></Config> -->
+<!--         </Visual> -->
+<!--         <Visual Name="Propeller2" Type="Mesh"> -->
+<!--              <Config MeshName="Quadcopter/Propeller_rw.mesh" Position="0 0.24 -0.042" Orientation="1 0 0; 0 0 -1; 0 1 0"></Config> -->
+<!--         </Visual> -->
+<!--         <Visual Name="Propeller3" Type="Mesh"> -->
+<!--             <Config MeshName="Quadcopter/Propeller.mesh" Position="-0.24 0 -0.042" Orientation="1 0 0; 0 0 -1; 0 1 0"></Config> -->
+<!--         </Visual> -->
+<!--         <Visual Name="Propeller4" Type="Mesh"> -->
+<!--             <Config MeshName="Quadcopter/Propeller_rw.mesh" Position="0 -0.24 -0.042" Orientation="1 0 0; 0 0 -1; 0 1 0"></Config> -->
+<!--         </Visual> -->
+	</Visual>
+	<Physical Name="Frame" Type="Rigid">
+		<Config Type="Dynamic" LinearDamping="0" AngularDamping="0" Position="0 0 -0.6" Orientation="1 0 0; 0 1 0; 0 0 1"></Config>
+		<!-- controllerboard -->
+		<Shape Type="Box" Extent="0.05 0.05 0.005" Position="0 0 -0.02" Orientation="0.7071 0.7071 0; -0.7071 0.7071 0; 0 0 1" Mass="0.05" />
+		<!-- Tracker -->
+		<Shape Type="Box" Extent="0.02 0.02 0.02" Position="0 0 -0.06" Orientation="0.7071 0.7071 0; -0.7071 0.7071 0; 0 0 1" Mass="0.07" />
+		<!-- battery -->
+		<Shape Type="Box" Extent="0.07 0.05 0.01" Position="0 0 0.02" Orientation="1 0 0; 0 1 0; 0 0 1" Mass="0.245" />
+		<Shape Type="Sphere" Extent="0.045" Position="0.24 0 0.045" Orientation="1 0 0; 0 1 0; 0 0 1" Mass="0.001" />
+		<Shape Type="Sphere" Extent="0.045" Position="0 0.24 0.045" Orientation="1 0 0; 0 1 0; 0 0 1" Mass="0.001" />
+		<Shape Type="Sphere" Extent="0.045" Position="-0.24 0 0.045" Orientation="1 0 0; 0 1 0; 0 0 1" Mass="0.001" />
+		<Shape Type="Sphere" Extent="0.045" Position="0 -0.24 0.045" Orientation="1 0 0; 0 1 0; 0 0 1" Mass="0.001" />
+<!-- motors -->
+		<Shape Type="Sphere" Extent="0.02" Position="0.24 0 -0.01" Orientation="1 0 0; 0 1 0; 0 0 1" Mass="0.07" Restitution="0.5" />
+		<Shape Type="Sphere" Extent="0.02" Position="0 0.24 -0.01" Orientation="1 0 0; 0 1 0; 0 0 1" Mass="0.07" />
+		<Shape Type="Sphere" Extent="0.02" Position="-0.24 0 -0.01" Orientation="1 0 0; 0 1 0; 0 0 1" Mass="0.07" />
+		<Shape Type="Sphere" Extent="0.02" Position="0 -0.24 -0.01" Orientation="1 0 0; 0 1 0; 0 0 1" Mass="0.07" />
+		<!-- arms of frame -->
+		<Shape Type="Box" Extent="0.265 0.005 0.005" Position="0 0 0.005" Orientation="1 0 0; 0 1 0; 0 0 1" Mass="0.05" />
+		<Shape Type="Box" Extent="0.265 0.005 0.005" Position="0 0 0.005" Orientation="0 -1 0; 1 0 0; 0 0 1" Mass="0.05" />
+	</Physical>
+	<Connection From="Frame" To="QR" />
+<!-- 	<Sensor Name="DistanceSensor"> -->
+<!--  		<Config Name="DistanceSensor" UpdateTimestep="0.25" DistanceToSelf="false" NumberPoints="-1"></Config> -->
+<!--  	</Sensor> -->
+	<Sensor Name="NearestNeighbour">
+ 		<Config Name="NearestNeighbour" UpdateTimestep="0.1" Range="10"></Config>
+ 	</Sensor>
+	
+</Artifact>

@@ -1,0 +1,11 @@
+
+<launch>
+	<!-- SSX -->
+	<node name="SwarmSimX" 
+		pkg="ssx" 
+		type="ssx.sh" 
+		args="--conffile $(env HOME)/SwarmSimX/share/SwarmSimX/Config/Config_massive_robots.xml" 
+		output = "screen">
+	</node>
+	<node pkg="mk_behaviors" type="markertracking" name="markertracking" args="0 2.2 1 2 0.05 10 0 13.2" output="screen" required="true"></node>
+</launch>

@@ -1,0 +1,16 @@
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/CMakeFiles/ROSBUILD_genmsg_cpp.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/CMakeFiles/ROSBUILD_genmsg_lisp.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/CMakeFiles/ROSBUILD_gensrv_cpp.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/CMakeFiles/ROSBUILD_gensrv_lisp.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/CMakeFiles/clean-test-results.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/CMakeFiles/mk_controls.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/CMakeFiles/rosbuild_precompile.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/CMakeFiles/rosbuild_premsgsrvgen.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/CMakeFiles/rospack_genmsg.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/CMakeFiles/rospack_genmsg_libexe.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/CMakeFiles/rospack_gensrv.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/CMakeFiles/test.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/CMakeFiles/test-future.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/CMakeFiles/test-results.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/CMakeFiles/test-results-run.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/CMakeFiles/tests.dir

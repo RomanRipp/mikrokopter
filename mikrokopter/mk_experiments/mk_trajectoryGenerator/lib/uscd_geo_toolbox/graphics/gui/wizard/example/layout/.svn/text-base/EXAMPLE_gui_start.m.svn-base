@@ -1,0 +1,176 @@
+function Config = gui_start
+
+% GUI_START  GUI-Structure for Calculation-Start-Section
+%
+% called by:  GUI_CALC
+%
+
+
+is_win = strcmp( upper(computer) , 'PCWIN' );
+
+%--------------------------------------------------------------------------
+% ButtonWidths
+
+
+wwf = 30 -  5 * is_win;      % FileList
+wwi = 50 - 10 * is_win;      % KennZahlenList
+
+wwc = wwf;      % Control
+wwm = wwi;      % MessageList
+
+wwi = wwi +    6 * i;         
+wwm = wwm + ( 10 + 2*is_win )*i; 
+
+
+%--------------------------------------------------------------------------
+% ButtonColors
+
+cl0 = [ 1.0  1.0  1.0 ];
+
+cl1 = [ 0.75  1.00  0.75  ];
+cl2 = [ 1.00  0.75  0.75  ];
+
+cl5 = [ 0.95  0.95  0.95  ];  % Bar
+
+%--------------------------------------------------------------------------
+% CallBackFunctions
+
+CBFcn       = '';
+
+
+
+%--------------------------------------------------------------------------
+% Control-UserData
+
+Start = struct( ...
+              ...
+ 'Mode' , { struct( 'None'  , { { cl1  'Starte Berechnung'     } } , ...
+                    'Run'   , { { cl2  'Stop Berechnung'       } } , ...
+                    'Break' , { { cl1  'Setze Berechnung fort' } } ) } , ...
+ 'Bar'       , { 'File'     } , ...  % Corresponding Process-Bar
+ 'StartTime' , {  0         } , ... 
+ 'Index'     , { zeros(0,2) } , ...  % [ StartList  SelectList ]
+ 'Name'      , {  cell(0,1) } , ...  
+ 'Status'    , { 'None'     }        ); % { 'None'  'Run'  'Break' }
+
+
+Skip = struct( ...
+              ...
+ 'Mode' , { struct( 'None'  , { { cl5  ''                          } } , ...
+                    'Run'   , { { cl2  '>> Nächste Datei >>'       } } , ...
+                    'Break' , { { cl1  '<< Verbleibe bei Datei >>' } } ) } , ...
+ 'Bar'       , { 'Duese'    } , ...  % Corressponding Process-Bar
+ 'StartTime' , {  0         } , ... 
+ 'Status'    , { 'None'     }        ); % { 'None'  'Run'  'Break' }
+
+
+%--------------------------------------------------------------------------
+% ProgressBar-UserData
+
+
+   Color =  struct( 'None'  , { cl5 } , ...
+                    'Done'  , { cl1 } , ...
+                    'Break' , { cl2 }       );
+
+BarFile  = struct( 'Format' , { '%2.0f:%2.2d:%2.2d   --   %3.0f%%' } , ...
+                    'Color' , { Color                } , ...
+                  'Percent' , {  0                   } , ...
+                   'String' , { ''                   } , ...
+                    'Image' , { zeros(0,0)           } , ...
+                   'Status' , { 'run'                }  ); 
+              
+BarDuese = struct( 'Format' , { '%2.2d:%2.2d   --   %2.0f%%' } , ...
+                   'Color'  , { Color                } , ...
+                  'Percent' , {  0                   } , ...
+                   'String' , { ''                   } , ...
+                    'Image' , { zeros(0,0)           } , ...
+                   'Status' , { 'run'                }         );
+
+%--------------------------------------------------------------------------
+% ListBox-Parameter
+
+%        Value  Min    Max   
+Value = [  1     0      2   ];
+
+
+%--------------------------------------------------------------------------
+% Selected Files
+
+
+ str1 = ' Gewählte Dateien';
+ str2 = ' KennZahlen ';
+
+ opt = { 'RowNumber'  , imag(wwi)-2     , ...
+         'ColNumber'  , wwf             , ...
+         'VisOff'     , { 'Edit' 'Mark' 'UnMark' }      };
+
+
+% UserData = % { Marked Name FullFile SelectIndex }
+
+TextList = stdgui('Type' , 'text' , 'Width' , wwf, 'String' , str1, ...
+                  'Style' , 'list' , 'UserData' , cell(0,4));
+    List = stdgui('Type' , 'sel_list' , 'Option' , opt);
+
+TextInfo = stdgui('Type' , 'text' , 'Width' , real(wwi), 'String' , str2, ...
+                  'Style' , 'list' , 'UserData' , str2);
+    Info = stdgui('Type' , 'listbox' , 'Width' , wwi, 'Value' , Value);
+
+
+File = struct( ...
+               ...
+'TextSelect' , { { 1+0*i  TextList } } , ...
+    'Select' , { { 1+1*i      List } } , ...
+'TextInfo'   , { { 2+0*i  TextInfo } } , ...
+    'Info'   , { { 2+1*i      Info } }       );
+
+
+%--------------------------------------------------------------------------
+% ControlButtons
+
+FileStr  = 'Datei  %.0f/%.0f: ';
+
+DueseStr = 'Düse  %.0f/%.0f';
+
+
+Start = stdgui('Type' , 'pushbutton' , 'Width' , wwc, 'Color' , cl1, ...
+               'String' , Start.Mode.None{2}, ...
+               'Style' , 'list' , 'UserData' , Start, 'CBFcn' , CBFcn);
+
+Skip  = stdgui('Type' , 'pushbutton' , 'Width' , wwc, 'Color' , cl2, ...
+               'String' , Skip.Mode.None{2}, ...
+               'Style' , 'list' , 'Text' , ' ' , 'UserData' , Skip, 'CBFcn' , CBFcn);
+
+TextFile  = stdgui('Type' , 'text' , 'Width' , wwc, 'String' , 'Datei' ,  ...
+                   'Style' , 'list' , 'UserData' , FileStr );
+
+TextDuese = stdgui('Type' , 'text' , 'Width' , wwc, 'String' , 'Duese' ,  ...
+                   'Style' , 'list' , 'UserData' , DueseStr );
+
+BarFile  = stdgui('Type' , 'pushbutton' , 'Width' , wwc, 'Color' , cl5, ...
+                  'Style' , 'list' , 'UserData' , BarFile);
+
+BarDuese = stdgui('Type' , 'pushbutton' , 'Width' , wwc, 'Color' , cl5, ...
+                   'Style' , 'list' , 'UserData' , BarDuese);
+
+Message = stdgui('Type' , 'listbox' , 'Width' , wwm, 'Value' , Value ,  ...
+                 'Text' , 'Meldungen' , 'UserData' , imag(wwm));
+
+
+Control = struct( ...
+                  ...
+  'Start'     , { { 1+0*i  Start     } } , ...
+  'TextFile'  , { { 1+1*i  TextFile  } } , ...
+      'File'  , { { 1+2*i   BarFile  } }, ...
+  'TextDuese' , { { 1+3*i  TextDuese } } , ...
+      'Duese' , { { 1+4*i   BarDuese } } , ...
+  'Skip'      , { { 1+5*i  Skip      } } , ...
+  'Message'   , { { 2+0*i  Message   } }       );
+
+
+%--------------------------------------------------------------------------
+% Output
+
+Config = struct( 'File'      , { File    } , ...
+                 'Separator' , { NaN     } , ...
+                 'Control'   , { Control }   );
+

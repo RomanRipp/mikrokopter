@@ -1,0 +1,18 @@
+<package>
+  <description brief="mk_behaviors">
+
+     mk_behaviors
+
+  </description>
+  <author>Pratap Tokekar</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+	<url>http://ros.org/wiki/mk_behaviors</url>
+
+	<depend package="roscpp"/>
+	<!--depend package="mk_driver"/-->
+	<depend package="mk_msgs"/>
+
+</package>
+
+

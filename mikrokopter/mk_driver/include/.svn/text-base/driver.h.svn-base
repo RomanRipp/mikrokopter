@@ -1,0 +1,221 @@
+#ifndef HEXAWRAP_H
+#define HEXAWRAP_H
+
+#include <ros/ros.h>
+#include "EarthCoords.h"
+#include <std_msgs/Float32.h>
+#include <mk_msgs/motorCommands.h>
+#include <mk_msgs/sensorData.h>
+#include <mk_msgs/stateData.h>
+#include <mk_msgs/SetGPSWaypoint.h>
+#include <mk_msgs/listwp.h>
+#include <mk_msgs/SetSerialPoti.h>
+#include <iostream>
+#include <fstream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <termios.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <vector>
+
+#define RXD_BUFFER_LENGTH 300
+#define TXD_BUFFER_LENGTH 300
+
+//---------NAvi data status-----------------------------
+#define INVALID         0x00
+#define NEWDATA         0x01
+#define PROCESSED       0x02
+
+//---------POTI values----------------------------------
+#define POTI_ON			125
+#define POTI_OFF		-125
+#define POTI_NEUTRAL	0
+
+// ------- NCFlags -------------------------------------
+#define NC_FLAG_FREE                            0x1
+#define NC_FLAG_PH                              0x2
+#define NC_FLAG_CH                              0x4
+#define NC_FLAG_RANGE_LIMIT                     0x8
+#define NC_FLAG_NOSERIALLINK                    0x10
+#define NC_FLAG_TARGET_REACHED                  0x20
+#define NC_FLAG_MANUAL                          0x40
+#define NC_FLAG_GPS_OK                          0x80
+
+// ------- FCStatusFlags -------------------------------
+#define FC_STATUS_MOTOR_RUN                     0x1
+#define FC_STATUS_FLY                           0x2
+#define FC_STATUS_CALIBRATE                     0x4
+#define FC_STATUS_START                         0x8
+#define FC_STATUS_EMERGENCY_LANDING             0x10
+#define FC_STATUS_LOWBAT                        0x20
+#define FC_STATUS_VARIO_TRIM_UP                 0x40
+#define FC_STATUS_VARIO_TRIM_DOWN               0x80
+
+// ------- FCStatusFlags2 ------------------------------
+#define FC_STATUS2_CAREFREE_ACTIVE              0x1
+#define FC_STATUS2_ALTITUDE_CONTROL_ACTIVE      0x2
+#define FC_STATUS2_FAILSAFE_ACTIVE              0x4
+#define FC_STATUS2_OUT1                         0x8
+#define FC_STATUS2_OUT2                         0x10
+#define FC_STATUS2_RES1                         0x20
+#define FC_STATUS2_RES2                         0x40
+#define FC_STATUS2_RES3                         0x80
+
+//----------Time constraints-----------------------------
+#define LINK_TIMEOUT_S 							2
+#define LINK_RECOVER_TIME_S 					1
+#define DRIVER_LOOP_MS 							50.0
+#define RESEND_INTERVAL_MS 						1000.0
+#define DEBUG_SEND_INTERVAL 					50 // *10MSaccess
+#define NAVI_SEND_INTERVAL 						5 // *10MS
+
+//----------NAVI data constants--------------------------
+#define GPS_TOLERANCE_RADIUS 					7
+#define POINT_TYPE_INVALID 						255
+#define POINT_TYPE_WP   						0
+#define POINT_TYPE_POI  						1
+
+//----------Constants-----------------------------------
+#define PI 3.14159265358
+#define GAS_COEFF 1
+
+//-----------Convertions---------------------------------
+#define DEG_TO_RAD(x) (x*0.0174532925f)
+#define RAD_TO_DEG(x) (x*57.2957795f)
+#define MIKO_TO_RAD(x) (x*0.02473695)
+#define RAD_TO_MIKO(x) (x*40.425355545)
+
+
+int openSerial (char *portname, int speed);
+int receiveData ();
+void encode(unsigned char cmd,int addr, unsigned char* data, int dataLen);
+void decode(int receivedBytes);
+speed_t getBaud(int speed);
+void publish();
+int validSpeed(char*);
+int rescale(int b1, int b2);
+bool ModeSwitched(mk_msgs::SetSerialPoti::Request potis);
+
+RSN::EarthCoords earthCoords;
+int fd;
+std::string serialPortName;
+int serialPortSpeed = 0;
+unsigned char g_rxd_buffer[RXD_BUFFER_LENGTH];
+unsigned char* g_pRxData = 0;
+unsigned char g_RxDataLen = 0;
+
+struct str_ExternControl
+{
+	unsigned char Digital[2];
+	unsigned char RemoteButtons;
+        signed char  Pitch;
+        signed char  Roll;
+        signed char  Yaw;
+        unsigned char  Throttle;
+        signed char  Height;
+        unsigned char free;
+        unsigned char Frame;
+        unsigned char Config;
+
+};
+
+struct str_DebugOut
+{
+ unsigned char Status[2];
+ signed int Analog[32];    
+};
+
+typedef struct 
+{
+        uint16_t Distance;                                   // distance to target in cm
+        int16_t Bearing;                                    // course to target in deg
+}__attribute__((packed)) GPS_PosDev_t;
+
+/*
+typedef enum
+{
+        INVALID         = 0,
+        NEWDATA         = 1,
+        PROCESSED       = 2
+} Status_t;
+*/
+typedef struct
+{
+    int32_t Longitude;                                  // in 1E-7 deg
+    int32_t Latitude;                                   // in 1E-7 deg
+    int32_t Altitude;                                   // in dm
+    uint8_t Status;                                      // validity of data
+} __attribute__((packed)) GPS_Pos_t;
+
+typedef struct
+{
+    GPS_Pos_t Position;             // the gps position of the point, see ubx.h for details
+    int16_t Heading;                    // orientation, 0 no action, 1...360 fix heading, neg. = Index to POI in WP List
+    uint8_t  ToleranceRadius;            // in meters, if the MK is within that range around the target, then the next target is triggered
+    uint8_t  HoldTime;                   // in seconds, if the was once in the tolerance area around a WP, this time defines the delay before the next WP is triggered
+    uint8_t  Event_Flag;                 // future implementation
+    uint8_t  Index;                      // to indentify different points, workaround for bad communications PC <-> NC
+    uint8_t  Type;                       // typeof Point
+    uint8_t  WP_EventChannelValue;       //
+    uint8_t  AltitudeRate;               // rate to change the setpoint
+    uint8_t  Speed;                      // rate to change the Position
+    uint8_t  CamAngle;                   // Camera servo angle
+    uint8_t  Name[4];                    // Name of that point (ASCII)
+    uint8_t  reserve[2];                     // reserve
+} __attribute__((packed)) Point_t;
+
+typedef struct
+{
+        uint8_t Version;                                     // version of the data structure
+        GPS_Pos_t CurrentPosition;                      // see ubx.h for details
+        GPS_Pos_t TargetPosition;
+        GPS_PosDev_t TargetPositionDeviation;
+        GPS_Pos_t HomePosition;
+        GPS_PosDev_t HomePositionDeviation;
+        uint8_t  WaypointIndex;                              // index of current waypoints running from 0 to WaypointNumber-1
+        uint8_t  WaypointNumber;                             // number of stored waypoints
+        uint8_t  SatsInUse;                                  // number of satellites used for position solution
+        int16_t Altimeter;                                  // hight according to air pressure
+        int16_t Variometer;                                 // climb(+) and sink(-) rate
+        uint16_t FlyingTime;                                 // in seconds
+        uint8_t  UBat;                                       // Battery Voltage in 0.1 Volts
+        uint16_t GroundSpeed;                                // speed over ground in cm/s (2D)
+        int16_t Heading;                                    // current flight direction in ° as angle to north
+        int16_t CompassHeading;                             // current compass value in °
+        int8_t  AngleNick;                                  // current Nick angle in 1°
+        int8_t  AngleRoll;                                  // current Rick angle in 1°
+        uint8_t  RC_Quality;                                 // RC_Quality
+        uint8_t  FCStatusFlags;                              // Flags from FC
+        uint8_t  NCFlags;                                    // Flags from NC
+        uint8_t  Errorcode;                                  // 0 --> okay
+        uint8_t  OperatingRadius;                            // current operation radius around the Home Position in m
+        uint16_t TopSpeed;                                   // velocity in vertical direction in cm/s
+        uint8_t  TargetHoldTime;                             // time in s to stay at the given target, counts down to 0 if target has been reached
+        uint8_t  FCStatusFlags2;                             // StatusFlags2 (since version 5 added)
+        int16_t SetpointAltitude;                           // setpoint for altitude
+        uint8_t  Gas;                                        // for future use
+        uint16_t Current;                                    // actual current in 0.1A steps
+        uint16_t UsedCapacity;                               // used capacity in mAh
+} __attribute__((packed)) NaviData_t;
+
+typedef struct
+{
+  double AnglePitch;
+  double AngleRoll;
+  double AngleYaw;
+  double ACCX;
+  double ACCY;
+  double ACCZ;
+} __attribute__((packed)) Attitude_t;
+
+typedef struct
+{
+  double x;
+  double y;	 
+  double z;	 
+  double yaw;	
+}__attribute__((packed)) Position_t;
+#endif
+

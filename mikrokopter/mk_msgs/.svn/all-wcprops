@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/rsn-svn/!svn/ver/2395/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/rsn-svn/!svn/ver/2395/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/rsn-svn/!svn/ver/2395/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/Makefile
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/manifest.xml
+END

@@ -1,0 +1,1 @@
+Read/Write binned GMT-Lines (Shore, River, Border) in NetCDF-Format

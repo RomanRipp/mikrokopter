@@ -1,0 +1,8 @@
+# Set a GPS Waypoint on the MikroKopter
+#
+# Request data here
+---
+# Acknowledgment
+# -1: something went wrong
+# +1: all good, taking off.
+int16 ack

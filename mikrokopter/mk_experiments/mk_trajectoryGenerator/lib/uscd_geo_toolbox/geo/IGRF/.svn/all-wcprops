@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/geo/IGRF
+END
+Comments.txt
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/geo/IGRF/Comments.txt
+END
+geomag60.c
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/geo/IGRF/geomag60.c
+END
+Contents.m
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/geo/IGRF/Contents.m
+END
+IGRF10.zip
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/geo/IGRF/IGRF10.zip
+END

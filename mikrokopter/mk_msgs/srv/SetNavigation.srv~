@@ -1,0 +1,8 @@
+# MikroKopter will navigate through set of waypoints
+# Default number of way points is 1
+int32 NumOfWPs
+---
+# Acknowledgment
+# -1: something went wrong
+# +1: all good, navigating.
+int16 ack

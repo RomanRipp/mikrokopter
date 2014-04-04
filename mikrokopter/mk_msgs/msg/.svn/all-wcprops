@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/rsn-svn/!svn/ver/2369/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/msg
+END
+ARMarkers.msg
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/rsn-svn/!svn/ver/2369/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/msg/ARMarkers.msg
+END
+stateData.msg
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/rsn-svn/!svn/ver/2369/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/msg/stateData.msg
+END
+motorCommands.msg
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/rsn-svn/!svn/ver/2369/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/msg/motorCommands.msg
+END
+sensorData.msg
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/rsn-svn/!svn/ver/2369/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/msg/sensorData.msg
+END
+ARMarker.msg
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/rsn-svn/!svn/ver/2369/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/msg/ARMarker.msg
+END

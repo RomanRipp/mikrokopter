@@ -1,0 +1,21 @@
+Oceanography Toolbox
+
+Calculate oceanographic parameters like 
+Salinity, pot. Temperature, Density, SoundSpeed etc.
+
+Additional toolboxes are:
+
+- a Library of MATLAB Computational Routines for the Properties of Seawater
+  Source: http://www.cmar.csiro.au/datacentre/ext_docs/seawater.htm
+
+- the AIR-SEA-toolbox by Bob Beardlsley and Rick Pawlowicz.
+  Source: http://woodshole.er.usgs.gov/operations/sea-mat/air_sea-html/
+
+- T_TIDE: Harmonic Analysis Toolbox of time series by R.Pawlowicz
+  Source: http://www.eos.ubc.ca/~rich/
+
+- Meteorology, Thermodynamic Matlab utility code
+  Source: http://lgmacweb.env.uea.ac.uk/e046/resources/matlab_utility_code.html
+
+- Bulk flux code from Convective Internal Boundary-Layer Model
+  Source: http://lgmacweb.env.uea.ac.uk/e046/resources/cibl.htm

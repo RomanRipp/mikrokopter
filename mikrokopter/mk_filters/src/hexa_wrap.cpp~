@@ -1,0 +1,128 @@
+#include <ros/ros.h>
+#include <iostream>
+#include <fstream>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include <errno.h>
+#include <termios.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+using namespace std;
+using namespace ros;
+
+int fd = 0;
+
+speed_t getBaud(int speed){
+	switch(speed){
+		case 9600:
+         		return B9600;
+      		case 19200:
+         		return B19200;
+       		case 38400:
+			return B38400;
+	       	case 57600:
+         		return B57600;
+       		case 115200:
+         		return B115200;
+       		case 230400:
+         		return B230400;
+      		default:                 // invalid bitrate
+         		return B0; 	
+	} 
+}
+
+void openSerial(char *portname, int speed){
+	ROS_INFO("Opening serial port for communication");
+
+	struct termios options;
+	tcgetattr(fd, &options);
+	speed_t serialBaud = getBaud(speed);
+	cfsetispeed(&options, serialBaud);
+	cfsetospeed(&options, serialBaud);
+	tcsetattr(fd, TCSANOW, &options);
+
+	fd = open (portname, O_RDWR | O_NOCTTY | O_NDELAY);  
+  	if (fd < 0)
+  	{
+		ROS_INFO("Error opening serial port");
+  	}else
+  	{
+		fcntl(fd, F_SETFL, 0);
+		ROS_INFO("Serial port opened");
+  	}
+	options.c_cflag &= ~PARENB;    // set no parity, stop bits, data bits
+	options.c_cflag &= ~CSTOPB;
+	options.c_cflag &= ~CSIZE;
+	options.c_cflag |= CS8;
+	tcsetattr(fd, TCSANOW, &options);
+}
+
+void receiveData(){
+	char buf [100];
+	int n = read(fd, buf, sizeof buf);
+	cout<<"Status: "<<n<<" received message: "<<buf<<endl;
+} 
+
+void sendCommand(char* msg){
+	
+	char msg1[22] = {'#', 'b', 't','>',']','=','=','=','=','=','=','=','=','=','=','=','=','=','=','P','g','\r'};	
+	write (fd, msg1, sizeof msg1);
+	cout<<"Command: "<<msg<<endl;
+}
+
+void AddCRC(int DataBufferLength,char* DataBuffer)
+{
+	unsigned int tmpCRC = 0;
+	int i = 0;
+	for(i = 0; i <  DataBufferLength;i++)
+	{
+		tmpCRC += DataBuffer[i];
+	}
+	tmpCRC %= 4096;
+	DataBuffer[i++] = '=' + tmpCRC / 64;
+	DataBuffer[i++] = '=' + tmpCRC % 64;
+	DataBuffer[i++] = '\r';
+	cout<<"Message: "<<DataBuffer<<endl;
+	for (int j = 0; j < i; j++){
+		cout<<"ascii symbol: "<<(int) DataBuffer[j]<<endl;
+	}
+}
+
+void encode(unsigned char cmd,unsigned char addr, unsigned char* snd, unsigned char len)
+{
+	char SendBuffer[10];
+	unsigned int pt = 0;
+	unsigned char a,b,c;
+	unsigned char ptr = 0;
+	SendBuffer[pt++] = '#';               // Start-Byte
+	SendBuffer[pt++] = 'a' + addr;        // Adress
+     	SendBuffer[pt++] = cmd;               // Command
+     	while(len)
+     	{
+      	if(len) { a = snd[ptr++]; len--;} else a = 0;
+      	if(len) { b = snd[ptr++]; len--;} else b = 0;
+      	if(len) { c = snd[ptr++]; len--;} else c = 0;
+  	SendBuffer[pt++] = '=' + (a >> 2);
+        SendBuffer[pt++] = '=' + (((a & 0x03) << 4) | ((b & 0xf0) >> 4));
+        SendBuffer[pt++] = '=' + (((b & 0x0f) << 2) | ((c & 0xc0) >> 6));
+        SendBuffer[pt++] = '=' + ( c & 0x3f);
+       	}	
+	AddCRC(pt, SendBuffer);
+}
+
+int main(int argc, char** argv){
+  	ROS_INFO("Hexacopter wrapper started...");
+  	init(argc,argv,"wrapper");
+  	NodeHandle nh("/");
+  	Rate Loop_rate(10);
+  	while(ok()){
+	//TODO send serial commands here 
+		Duration(0.1).sleep();
+		spinOnce();
+  	}
+  	spin();
+  	return 0;
+}

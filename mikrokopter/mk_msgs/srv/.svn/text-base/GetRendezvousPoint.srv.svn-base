@@ -1,0 +1,12 @@
+# Request rendezvous coordinates
+#
+# Request coordinates
+float32 currLatitude
+float32 currLongitude
+---
+# Respond with acknowledment and rendezvous cootdinates 
+# -1: something went wrong
+# +1: all good, taking off.
+int16 ack
+float32 rendezLatitude
+float32 rendezLongitude

@@ -1,0 +1,23 @@
+# Set a GPS Waypoint on the MikroKopter
+#
+# Request data here
+int32 index
+float32 latitude
+float32 longitude
+float32 altitude
+int32 holdTime
+float32 altitudeRate
+float32 speed
+
+#float32 heading
+#int32 toleranceRadius
+#int32 eventChannel
+#int32 status
+#int32 eventFlag
+#int32 type
+#int32 camAngle
+---
+# Acknowledgment
+# -1: something went wrong
+# +1: all good, taking off.
+int16 ack

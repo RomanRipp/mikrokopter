@@ -1,0 +1,462 @@
+    Julian Day Numbers  by Peter Meyer
+
+    URL: http://www.hermetic.ch/cal_stud/jdn.htm
+
+       1. Introduction
+       2. The Julian Period
+       3. Julian Day Number
+       4. Astronomical Julian Day Number
+          and Astronomical Julian Date
+       5. Chronological Julian Day Number
+          and Chronological Julian Date
+       6. Modified Julian Day Number
+       7. Lilian Day Number
+       8. Different Meanings of "Julian Date"
+       9. Conversion Algorithms
+
+    ------------------------------------------------------------------------
+
+          1. Introduction
+
+    Just as a Gregorian date is a date in the Gregorian Calendar, a
+    Julian date is a date in the Julian Calendar. (For more on these
+    calendars see The Julian and Gregorian Calendars <cal_art.html>).
+    Astronomers sometimes use the term "Julian date" in another sense,
+    according to which it is related to what is called a "Julian day
+    number". Such a use of the term "Julian date" makes it ambiguous,
+    but the meaning is usually clear from the context. In this article
+    the notion of the Julian day number will be explained, along with
+    various meanings of the term Julian date.
+
+    According to the system of numbering days called Julian day numbers,
+    used by astronomers and calendricists (those who study calendars,
+    unfortunately not for a living), the temporal sequence of days is
+    mapped onto the sequence of integers, -2, -1, 0, 1, 2, 3, etc. This
+    makes it easy to determine the number of days between two dates
+    (just subtract one Julian day number from the other).
+
+    For example, a solar eclipse was seen at Nineveh on June 15, 763
+    B.C. (Julian Calendar), according to the Assyrian chronicles in the
+    British Museum, and a lunar eclipse occurred there on the night of
+    April 14-15, 425 B.C. (Julian Calendar). (The Lunar Calendars and
+    Eclipse Finder <../lcef/lcef.htm> program tells us that these
+    eclipses occurred at approximately 10:32 a.m. and 2:27
+    a.m. respectively.) The Julian day numbers corresponding to these
+    dates are 1,442,902 and 1,566,296 respectively. This makes it easy
+    to calculate that the lunar eclipse occurred 123,394 days after the
+    solar eclipse.
+
+    Generally speaking, an integer date is any system of assigning a
+    one-to-one correspondence between the usual sequence of days (and
+    nights) and the integers. Such systems differ only in the day chosen
+    to correspond to day 0 or day 1. For example, in some applications
+    NASA uses the Truncated Julian Date, which is the number of days
+    since 1968-05-24 (at which time the Apollo missions to the Moon were
+    underway). Other starting dates popular with computer programmers
+    are, or have been, 1601-01-01 GC (Gregorian Calendar), 1900-01-01,
+    1901-01-01 and 1980-01-01 (when time began according to IBM PCs).
+    The choice is usually a consequence of a trade-off concerning
+    (i) the temporal precision required (days to microseconds), (ii) the
+    length of the period of interest (a decade, a century, a millennium,
+    etc.), (iii) the number of bytes available for storing the date and
+    (iv) the number of characters required to display the date.
+
+    ------------------------------------------------------------------------
+
+          2. The Julian Period
+
+    The Julian day number system is sometimes (erroneously) said to have
+    been invented by Joseph Justus Scaliger (born 1540-08-05 JC in Agen,
+    France, died 1609-01-21 JC in Leiden, Holland), who during his life
+    immersed himself in Greek, Latin, Persian and Jewish literature, and
+    who was one of the founders of the science of chronology. Scaliger's
+    invention was not the system of Julian day numbers, but rather the
+    so-called Julian period.
+
+    Scaliger combined three traditionally recognized temporal cycles of
+    28, 19 and 15 years to obtain a great cycle, the Scaliger cycle, or
+    Julian period, of 7980 years (7980 is the least common multiple of
+    28, 19 and 15). According to the Encyclopedia Brittanica:
+
+        "The length of 7,980 years was chosen as the product of 28 times
+        19 times 15; these, respectively, are the numbers of years in
+        the so-called solar cycle of the Julian calendar in which dates
+        recur on the same days of the week; the lunar or Metonic cycle,
+        after which the phases of the Moon recur on a particular day in
+        the solar year, or year of the seasons; and the cycle of
+        indiction, originally a schedule of periodic taxes or government
+        requisitions in ancient Rome."
+
+    According to some accounts Scaliger named his Julian period after
+    his father, Julius Scaliger. However in his De Emandatione Temporum
+    (Geneva, 1629) Scaliger says: "Julianam vocauimus, quia ad annum
+    Julianum accommodata ..." (translated by R. L. Reese et al. (3)
+    <#refs> as "We have termed it Julian because it fits the Julian year
+    ...").
+
+    Regarding the Julian period the U.S. Naval Observatory has this to say:
+
+        "In the 16th century Joseph Justus Scaliger tried to resolve the
+        patchwork of historical eras by placing everything on a single
+        system. Not being ready to deal with negative year counts, he
+        sought an initial epoch in advance of any historical record. His
+        approach was numerological and utilized three calendrical
+        cycles: the 28-year solar cycle, the 19-year cycle of Golden
+        Numbers, and the 15-year indiction cycle. The solar cycle is the
+        period after which week days and calendar dates repeat in the
+        Julian calendar. The cycle of Golden Numbers is the period after
+        which moon phases repeat (approximately) on the same calendar
+        dates. The indiction cycle was a Roman tax cycle of unknown
+        origin. Therefore, Scaliger could characterize a year by the
+        combination of numbers (S,G,I), where S runs from 1 through 28,
+        G from 1 through 19, and I from 1 through 15. Scaliger first
+        stated that a given combination would recur after 7980 (= 28 x
+        19 x 15) years. He called this a Julian cycle because it was
+        based on the Julian calendar. Scaliger knew that the year of
+        Christ's birth (as determined by Dionysius Exiguus) was
+        characterized by the number 9 of the solar cycle, by Golden
+        Number 1, and by number 3 of the indiction cycle, or (9,1,3).
+        Then Scaliger chose as this initial epoch the year characterized
+        by (1,1,1) and determined that (9,1,3) was year 4713 of his
+        chronological era [and thus that year (1,1,1) was 4713 B.C].
+        Scaliger's initial epoch was later to be adopted as the initial
+        epoch for the Julian day numbers." ? The 21st Century and the
+        3rd Millennium <http://aa.usno.navy.mil/AA/faq/docs/millennium.html>
+
+    It turns out, however, that the Julian period was discovered by
+    others before Scaliger. Roger, Bishop of Hereford, discusses the
+    three cycles used by Scaliger in his Compotus (written in 1176 CE)
+    and states that "these three ... do not come together at one point
+    for 7980 years" (see (5) <#refs>), although he does not identify the
+    year (4713 B.C.) of their coincidence. Furthermore, according to R.
+    L. Reese et al. (6) <#refs>:
+
+        "A 12th-century manuscript indicates that the 7980-year period
+        was used explicitly for calendrical purposes by an earlier
+        Bishop of Hereford, Robert de Losinga, in the year A.D. 1086,
+        almost a century before the Bishop of Hereford named Roger. ...
+        Robert de Losinga combines the solar, lunar and indiction cycles
+        into a "great cycle [magnum ciclum]" of 7980 years ... Thus the
+        manuscript by Robert de Losinga places the earliest known use of
+        the Julian period in the year A.D. 1086."
+
+    The first Julian period began with Year 1 on -4712-01-01 JC (Julian
+    Calendar) and will end after 7980 years on 3267-12-31 JC, which is
+    3268-01-22 GC (Gregorian Calendar). 3268-01-01 JC is the first day
+    of Year 1 of the next Julian period.
+
+    ------------------------------------------------------------------------
+
+          3. Julian Day Number
+
+    Although Joseph Justus Scaliger was, as noted above, one of the
+    founders of the science of chronology, he did not invent the Julian
+    day number system. Its inventor was the astronomer John W. F.
+    Herschel. Lance Latham writes:
+
+        "It remained, however, for the astronomer John F. Herschel to
+        turn this idea [of Scaliger's] into a complete time system,
+        rather than a method of relating years. In 1849, Herschel
+        published Outlines of Astronomy and explained the idea of
+        extending Scaliger's concept to days." ? The Standard C
+        Date/Time Library, p.42. 
+
+    Following Herschel's lead astronomers adopted this system and took
+    noon GMT -4712-01-01 JC (January 1st, 4713 B.C.) as their zero
+    point. (Note that 4713 B.C. is the year -4712 according to the
+    astronomical year numbering <cal_art.html#Astronomical>.) For
+    astronomers a "day" begins at noon (GMT) and runs until the next
+    noon (so that the nighttime falls conveniently within one "day",
+    unless they are making their observations in a place such as
+    Australia). Thus they defined the Julian day number of a day as the
+    number of days elapsed since noon GMT on January 1st, 4713 B.C., in
+    the Proleptic Julian Calendar <cal_art.html#Proleptic>.
+
+    Thus the Julian day number of -4712-01-01 is 0. The Julian day
+    number of 1996-03-31 CE (Common Era) is 2,450,174 ? meaning that on
+    1996-03-31 CE 2,450,174 days had elapsed since -4712-01-01 JC.
+
+    Actually "day" here means a day and a night. Calendricists have a
+    word for a day and a night, namely, "nychthemeron". Generally when
+    calendricists use the term "days" they are talking of nychthemerons.
+
+    In most calendars the calendar date changes at midnight. In these
+    calendars a nychthemeron is the period from one midnight to the
+    next. For astronomers, however, a nychthemeron runs, not from
+    midnight to midnight, but from noon to noon. And in some calendars,
+    e.g., the Jewish Calendar, a nychthemeron runs from sunset to
+    sunset. Thus a nychthemeron simply means a day and a night, and
+    cannot be more precisely defined except with respect to some
+    particular calendar or class of calendars.
+
+    The Julian day number is a count of nychthemerons elapsed since some
+    particular nychthemeron. Thus there are slight variations on the
+    Julian day number system depending on which kind of nychthemeron is
+    being counted, as we shall see below.
+
+    ------------------------------------------------------------------------
+
+          4. Astronomical Julian Day Number and Astronomical Julian Date
+
+    An astronomical Julian day number is a count of astronomical
+    nychthemerons (i.e., nychthemerons which begin at noon GMT) from the
+    astronomical nychthemeron which began at noon GMT on -4712-01-01 JC.
+
+    For recording the time of an astronomical event the Julian day
+    number of the nychthemeron in which the event occurs is, of course,
+    usually not sufficiently precise. In order to specify the time of an
+    event astronomers add a fractional component to the Julian day
+    number, e.g., 0.25 = six hours (1/4 of 24 hours) after the start of
+    the nychthemeron. An astronomical Julian day number plus a
+    fractional component specifying the time elapsed since the start of
+    the nychthemeron denoted by that Julian day number is called an
+    astronomical Julian date. (The term "Julian date" has several
+    meanings, as explained in Section 8 <#different_meanings> below.)
+
+    Thus the astronomical Julian date 0.5 is the midnight point
+    separating -4712-01-01 JC and -4712-01-02 JC, the astronomical
+    Julian date 1.25 is 6 p.m. on -4712-01-02 JC, and so on.
+
+    An astronomical Julian day number can also be seen as an
+    astronomical Julian date which is an integer, and which denotes the
+    period running from the start of an astronomical nychthemeron (noon
+    GMT) to the start of the next.
+
+    ------------------------------------------------------------------------
+
+          5. Chronological Julian Day Number and Chronological Julian Date
+
+    At some point students of calendrical science decided that the
+    Julian day number system would be very useful in their field,
+    provided the notion of a "day", i.e., "nychthemeron", were changed
+    to accord with that notion as commonly used in connection with
+    calendars. The Gregorian Calendar begins days at midnight, but not
+    all calendars do (for example, the Jewish Calendar has nychthemerons
+    which begin at sunset). Thus arose a variation of the Julian day
+    number and Julian date called "chronological" to distinguish them
+    from the "astronomical" versions.
+
+    A chronological Julian day number is a count of nychthemerons,
+    assumed to begin at midnight GMT, from the nychthemeron which began
+    at midnight GMT on -4712-01-01 JC. Chronological Julian day number 0
+    is thus the period from midnight GMT on -4712-01-01 JC to the next
+    midnight GMT. Chronological Julian day number 2,452,952 is the
+    period from midnight GMT on 2003-11-08 CE (Common Era) to the next
+    midnight GMT.
+
+    Again a fractional component may be added to the chronological
+    Julian day number to form a chronological Julian date. For example,
+    the chronological Julian date 0.5 is noon GMT on -4712-01-01 JC, the
+    chronological Julian date 1.25 is 6 a.m. GMT on -4712-01-02 JC, and
+    the chronological Julian date 2,452,952.75 is 6 p.m. GMT on
+    2003-11-08 CE.
+
+    So defined, a chronological Julian date is tied to zero degrees
+    longitude because the fractional component denotes time elapsed
+    since midnight GMT. We may, however, wish to use the concept in
+    connection with calendars intended to be used at other places on
+    Earth, where midnight is midnight local time and not midnight GMT.
+    For example, nychthemerons denoted by dates in the Chinese Calendar
+    run from midnight Beijing standard time to the next midnight BST,
+    and midnight in Beijing occurs eight hours earlier than midnight at
+    Greenwich.
+
+    So in order to use the concept of a chronological Julian date when
+    studying calendars whose dates denote nychthemerons which begin at
+    midnight local time, but not midnight GMT, we can define a local
+    chronological Julian date whose value is the GMT-based chronological
+    Julian date with a value between 0 and 0.5 added or subtracted to
+    account for the timezone difference (added for locations East of
+    Greenwich, subtracted for locations West of Greenwich). For example,
+    chronological Julian date 2,452,952.75 with respect to Beijing,
+    which denotes 6 p.m. on the Beijing-nychthemeron numbered 2,452,952,
+    equals the chronological Julian date 2,452,952.75 - 1/3 =
+    2,452,952.417 with respect to Greenwich (which is 10 a.m. on
+    2003-11-08 CE).
+
+    Thus, although there is only one variety of astronomical Julian date
+    (the one tied to the meridian of zero degrees longitude) there are
+    as many varieties of chronological Julian date as there are
+    longitudes we might wish to use in the study of various calendars.
+
+    ------------------------------------------------------------------------
+
+          6. Modified Julian Day Number
+
+    Since most days within about 150 years of the present have Julian
+    day numbers beginning with "24", Julian day numbers within this
+    300-odd-year period can be abbreviated. In 1957 the convention of
+    the modified Julian day number was adopted by the Smithsonian
+    Astrophysical Observatory:
+
+    Given a Julian day number JD, the modified Julian day number MJD is
+    defined as MJD = JD - 2,400,000.5. This has two purposes:
+
+       1. Days begin at midnight rather than noon.
+       2. For dates in the period from 1859 to about 2130 only five
+          digits need to be used to specify the date rather than seven. 
+
+    MJD 0 thus corresponds to JD 2,400,000.5, which is twelve hours
+    after noon GMT on JD 2,400,000 = 1858-11-16 (Gregorian or Common
+    Era). Thus MJD 0 designates the midnight of November 16th/17th,
+    1858, so day 0 in the system of modified Julian day numbers is the
+    day 1858-11-17 CE.
+
+    The main virtue of the MJD is that such dates require fewer bytes of
+    memory for storage (8) <#refs>. For calendrical studies the
+    chronological Julian day number is preferable.
+
+    ------------------------------------------------------------------------
+
+          7. Lilian Day Number
+
+    This concept is similar to that of the Julian day number. It is
+    named after Aloysius Lilius
+    <http://www.knight.org/advent/cathen/09247c.htm> (an advisor to Pope
+    Gregory XIII) who was one of the principal inventors of the
+    Gregorian Calendar reform. The Lilian day number is defined as "the
+    number of days since 14 October 1582 in the proleptic Gregorian
+    Calendar <cal_art.html#Proleptic>". This was the time of the
+    introduction of the Gregorian Calendar
+    <cal_art.html#Gregorian_Reform>, when it was decreed by Pope Gregory
+    XIII that the day following 4 October 1582 (which is 5 October 1582,
+    in the Julian Calendar) would thenceforth be known as 15 October
+    1582. Strictly speaking there is no "14 October 1582" in the
+    Gregorian Calendar, since the Gregorian Calendar did not begin until
+    15 October 1582, thus the need (in the definition to refer to the
+    "proleptic" Gregorian Calendar). Thus 15 October 1582 GC is Lilian
+    day 1 (the first day of the Gregorian Calendar), 16 October 1582 is
+    Lilian day 2, and so on.
+
+    It is not known whether Lilius himself employed this concept. Joe
+    Kress has traced the earliest use of the Lilian day number to its
+    inventor, Bruce G. Ohms of IBM in 1986 (7) <#refs>.
+
+    The relation between Julian day numbers and Lilian day numbers is:
+    LDN = JDN - 2,299,160
+
+    ------------------------------------------------------------------------
+
+          8. Different Meanings of "Julian Date"
+
+    The term "Julian date" has three different meanings, two of them
+    entirely respectable and the third used only by those who don't know
+    any better.
+
+    (i) As noted above, a Julian date is a date in the Julian Calendar
+    <cal_art.html>, the predecessor of the Gregorian Calendar.
+
+    (ii) Astronomers and calendricists use the term in this sense, but
+    (as explained in Section 4 <#astronomical> and Section 5
+    <#chronological> above) also in another sense, according to which a
+    Julian date is a number, denoting a point in time, which consists of
+    an integer part and a fractional part (e.g., 2439291.301), where the
+    integer part is a Julian day number <#julian_day_number> and the
+    fractional part specifies the time elapsed since the start of the
+    day denoted by that Julian day number.
+
+    (iii) In the commercial world the term "Julian date" has
+    unfortunately been used for a quite different concept, that of the
+    number of the day in a particular year, so that January 1st = day 1,
+    February 28th = day 59, and so on. To use the term "Julian date" to
+    mean day-of-year when the term also means a date in the Julian
+    Calendar (not to mention its use in the third sense by astronomers
+    and calendricists) is simply to invite confusion. Those who study
+    calendars unanimously recommend that the use of the term "Julian
+    date" to mean "number of the day in the year" be dropped. It has
+    been suggested in the Wikipedia article on ISO 8601
+    <http://en.wikipedia.org/wiki/ISO_8601> that the term ordinal date
+    be used, and this seems sensible.
+
+    ------------------------------------------------------------------------
+
+          9. Conversion Algorithms
+
+    Mathematicians and programmers have naturally interested themselves
+    in mathematical and computational algorithms to convert between
+    Julian day numbers and Gregorian dates. The following conversion
+    algorithm is due to Henry F. Fliegel and Thomas C. Van Flandern:
+
+    The Julian day (jd) is computed from Gregorian day, month and year
+    (d, m, y) as follows:
+
+     jd = ( 1461 * ( y + 4800 + ( m - 14 ) / 12 ) ) / 4 +
+          ( 367 * ( m - 2 - 12 * ( ( m - 14 ) / 12 ) ) ) / 12 -
+          ( 3 * ( ( y + 4900 + ( m - 14 ) / 12 ) / 100 ) ) / 4 +
+          d - 32075
+
+    Converting from the Julian day number to the Gregorian date is
+    performed thus:
+
+        l = jd + 68569
+        n = ( 4 * l ) / 146097
+        l = l - ( 146097 * n + 3 ) / 4
+        i = ( 4000 * ( l + 1 ) ) / 1461001
+        l = l - ( 1461 * i ) / 4 + 31
+        j = ( 80 * l ) / 2447
+        d = l - ( 2447 * j ) / 80
+        l = j / 11
+        m = j + 2 - ( 12 * l )
+        y = 100 * ( n - 49 ) + i + l
+
+    Days are integer values in the range 1-31, months are integers in
+    the range 1-12, and years are positive or negative integers.
+    Division is to be understood as in integer arithmetic, with
+    remainders discarded.
+
+    In these algorithms Julian day number 0 corresponds to
+    -4713-11-24 GC, which is -4712-01-01 JC.
+
+    These algorithms are valid only in the Gregorian Calendar and the
+    proleptic Gregorian Calendar <cal_art.html#Proleptic>. They do not
+    correctly convert dates in the Julian Calendar.
+
+    It seems that the designers of these algorithms intended them to be
+    used only with non-negative Julian day numbers (corresponding to
+    Gregorian dates on and after -4713-11-24 G). In fact they are valid
+    (only) for dates from -4900-03-01 G onward when converting from a
+    Julian day number to a date, and (only) from -4800-03-01 G onward
+    when converting from a date to a Julian day number.
+
+    ------------------------------------------------------------------------
+
+    Some articles, mainly concerning the origin of the Julian period:
+
+       1. Grafton, A. T.: History and Theory, XIV, 156 (1975)
+
+       2. Moyer, G.: Sky and Telescope, 61, 311 (1981)
+
+       3. Reese, R.L., Everett, S.M. & Craun, E.D.: "The origin of the
+          Julian Period: An application of congruences and the Chinese
+          Remainder Theorem", American Journal of Physics, vol. 49
+          (1981), 658-661.
+
+       4. van Gent, R. H.: Sky and Telescope, 62, 16 (1981)
+
+       5. Reese, R.L., Craun, E.D. & Mason, C.W.: "Twelfth-century
+          origins of the 7980-year Julian Period", American Journal of
+          Physics, vol. 51 (1983), 73.
+
+       6. Reese, R.L., Craun, E.D. & Herrin, M.: "New evidence
+          concerning the origin of the Julian period", American Journal
+          of Physics, vol. 59 (1991), 1043.
+
+       7. Ohms, Bruce G.: "Computer processing of dates outside the
+          twentieth century", IBM Systems Journal, 15 (1986), 244-51,
+          pp. 244-6.
+
+       8. Why Is Wednesday November 17, 1858 The Base Time For VAX/VMS?
+          <http://vms.tuwien.ac.at/info/humour/vms-base-time-origin.txt>
+
+    ------------------------------------------------------------------------
+
+    Software available from this website which performs conversion among
+    dates in the Gregorian Calendar, the Julian calendar and the Julian
+    day number system (and dates in other calendars):
+
+        * Easy Date Converter <http://www.hermetic.ch/edc/edc.htm>
+        * Mayan Calendrics <http://www.hermetic.ch/cal_sw/maya/mgc.htm>
+        * Chinese Calendrics <http://www.hermetic.ch/chcal/chcal.htm>
+        * Lunar Calendars and Eclipse Finder <http://www.hermetic.ch/lcef/lcef.htm> 
+
+    ------------------------------------------------------------------------

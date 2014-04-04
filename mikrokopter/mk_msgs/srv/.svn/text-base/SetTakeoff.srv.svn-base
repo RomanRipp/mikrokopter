@@ -1,0 +1,8 @@
+# MikroKopter will takeoff to a given height
+# Default height is 1m
+float64 height
+---
+# Acknowledgment
+# -1: something went wrong
+# +1: all good, taking off.
+int16 ack

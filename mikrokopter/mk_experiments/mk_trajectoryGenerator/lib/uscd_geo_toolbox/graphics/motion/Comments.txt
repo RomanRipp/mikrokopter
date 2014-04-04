@@ -1,0 +1,4 @@
+Interactive MouseActions on axes or objects
+
+Specialized Zoom: AXE_ZOOM, XZOOM
+Moving Objects:   AXEMOVE, OBJMOVE, TEXTMOVE, RECTMOVE

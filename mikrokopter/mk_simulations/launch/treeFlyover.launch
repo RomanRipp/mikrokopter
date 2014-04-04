@@ -1,0 +1,7 @@
+
+<launch>
+	<!-- SSX -->
+	<node name="SwarmSimX" pkg="ssx" type="ssx.sh" args="--conffile $(env HOME)/SwarmSimX/share/SwarmSimX/Config/treeFlyover.xml" output="screen">
+	</node>
+	<!--node pkg="mk_simulations" type="trajectory" name="trajectory" args="0 2.2 1 2 0.05 50 -13.2 0" output="screen" required="true"></node-->
+</launch>

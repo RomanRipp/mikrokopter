@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/EarthCoords.h
+math.h
+-
+
+/home/systems/Documents/ros_workspace/mikrokopter/mk_vision1/src/EarthCoords.cpp
+EarthCoords.h
+/home/systems/Documents/ros_workspace/mikrokopter/mk_vision1/src/EarthCoords.h
+

@@ -1,0 +1,17 @@
+/home/loki/Documents/ros_workspace/mikrokopter/mk_driver/CMakeFiles/ROSBUILD_genmsg_cpp.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_driver/CMakeFiles/ROSBUILD_genmsg_lisp.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_driver/CMakeFiles/ROSBUILD_gensrv_cpp.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_driver/CMakeFiles/ROSBUILD_gensrv_lisp.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_driver/CMakeFiles/clean-test-results.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_driver/CMakeFiles/driver.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_driver/CMakeFiles/earthcoords.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_driver/CMakeFiles/rosbuild_precompile.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_driver/CMakeFiles/rosbuild_premsgsrvgen.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_driver/CMakeFiles/rospack_genmsg.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_driver/CMakeFiles/rospack_genmsg_libexe.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_driver/CMakeFiles/rospack_gensrv.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_driver/CMakeFiles/test.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_driver/CMakeFiles/test-future.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_driver/CMakeFiles/test-results.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_driver/CMakeFiles/test-results-run.dir
+/home/loki/Documents/ros_workspace/mikrokopter/mk_driver/CMakeFiles/tests.dir

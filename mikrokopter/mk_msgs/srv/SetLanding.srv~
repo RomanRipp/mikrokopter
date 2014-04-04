@@ -1,0 +1,9 @@
+# MikroKopter will land from current location
+# The height is where the robot will stop the loop
+# Default height is 0.1m
+float64 height
+---
+# Acknowledgment
+# -1: something went wrong
+# +1: all good, taking off.
+int16 ack

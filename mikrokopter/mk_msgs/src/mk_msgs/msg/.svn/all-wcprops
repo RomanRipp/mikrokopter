@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/msg
+END
+_sensorData.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/msg/_sensorData.py
+END
+_ARMarker.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/msg/_ARMarker.py
+END
+_ARMarkers.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/msg/_ARMarkers.py
+END
+_MKCommands.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/msg/_MKCommands.py
+END
+_stateData.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/msg/_stateData.py
+END
+_naviCommands .py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/msg/_naviCommands%20.py
+END
+_naviCommands.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/msg/_naviCommands.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/msg/__init__.py
+END
+_motorCommands.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/msg/_motorCommands.py
+END

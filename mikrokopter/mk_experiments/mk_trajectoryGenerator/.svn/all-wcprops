@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/rsn-svn/!svn/ver/2801/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator
+END
+trajectories.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/rsn-svn/!svn/ver/2801/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/trajectories.m
+END
+SetWaypoints.wpl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/rsn-svn/!svn/ver/2790/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/SetWaypoints.wpl
+END
+mkline.m
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/rsn-svn/!svn/ver/2790/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/mkline.m
+END
+upanddown.m
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/rsn-svn/!svn/ver/2790/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/upanddown.m
+END
+Circle.csv
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/rsn-svn/!svn/ver/2790/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/Circle.csv
+END
+circle.m
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/rsn-svn/!svn/ver/2790/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/circle.m
+END
+writeWPFile.m
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/rsn-svn/!svn/ver/2790/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/writeWPFile.m
+END
+writeRsnWPFile.m
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/rsn-svn/!svn/ver/2790/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/writeRsnWPFile.m
+END
+matlab.mat
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/rsn-svn/!svn/ver/2790/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/matlab.mat
+END
+writeMkWPFile.m
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/rsn-svn/!svn/ver/2790/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/writeMkWPFile.m
+END
+spiral.m
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/rsn-svn/!svn/ver/2801/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/spiral.m
+END
+demo.kml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/rsn-svn/!svn/ver/2790/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/demo.kml
+END

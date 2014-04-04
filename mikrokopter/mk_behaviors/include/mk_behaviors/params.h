@@ -1,0 +1,6 @@
+#ifndef MK_BEHAVIORS_PARAMS_H
+#define MK_BEHAVIORS_PARAMS_H
+
+#define LOOP_PERIOD_MS	20
+
+#endif /* MK_BEHAVIORS_PARAMS_H */

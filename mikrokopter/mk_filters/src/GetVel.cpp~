@@ -1,0 +1,29 @@
+#include <ros/ros.h>
+#include <tf/transform_broadcaster.h>
+#include <nav_msgs/Odometry.h>
+#include <geometry_msgs/Twist.h>
+#include <iostream>
+
+using namespace nav_msgs;
+
+void velocity(const OdometryConstPtr &odom)
+{
+	ROS_INFO("Hi");
+	std::cout<<"X: "<<odom->pose.pose.position.x<<std::endl;
+}
+
+
+int main(int argc, char** argv){
+
+	// required to access ros. If this gives an error, make sure you are running
+	// roscore on your machine.
+	ros::init(argc,argv,"Motion");
+
+	//advertise the topic we wish to publish. Roscore will connect us to the
+	//other processes that wish to read from this typic
+	ros::NodeHandle nh("/");
+	ros::Subscriber sub = nh.subscribe("/odom", 1, velocity);
+	ros::spin();
+
+	return 0;
+}

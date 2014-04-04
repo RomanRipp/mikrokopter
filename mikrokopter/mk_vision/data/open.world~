@@ -1,0 +1,104 @@
+define block model
+(
+  size [ 1 1 1 ]
+	color "black"
+  gui_nose 0
+	laser_return 1
+	obstacle_return 1
+)
+define stern blinkenlight
+(
+ 
+ size [0.1 0.1 0.1]
+ period 350
+ dutycycle .2 
+ color "white"
+ gui_nose 0
+)
+define port blinkenlight
+(
+ 
+ size [0.1 0.1 0.1]
+ period 350
+ dutycycle .2 
+ color "red"
+ gui_nose 0
+)
+
+define starboard blinkenlight
+(
+ size [0.1 0.1 0.1]
+ period 250 
+ dutycycle .2
+ color "green"
+ gui_nose 0
+)
+define tread blinkenlight
+(
+ size [.4 .1 .4]
+ period 1
+ dutycycle 1
+ color "black"
+ gui_nose 0
+)
+
+define topurg ranger
+(
+	sensor( 			
+    range [ 0.0  100.0 ]
+    fov 120
+   samples 480
+  )
+
+  # generic model properties
+  color "black"
+  size [ 1.2 1.2 1.2 ]
+)
+
+define tank position
+(
+  size [.500 .500 .5]
+  origin [0 0 .2 0]
+  gui_nose 1
+  drive "diff"
+#sensors
+  topurg(pose [ 0.0 0.000 0.1 0.000 ])
+#running lights
+	starboard( pose [.2 -.2 -.2 0.000])
+	port( pose [.2 .2 -.2 0.000])
+	stern( pose [-.2 0 -.25 0])
+#treads
+	tread( pose [0 .25 -.5 0])
+	tread( pose [0 -.25 -.5 0])
+)
+
+# simple.world - basic world file example
+# Authors: Richard Vaughan
+# $Id$
+
+include "pioneer_noisy.inc"     # defines Pioneer-like robots
+include "map.inc"         # defines 'floorplan' object used for obstacle maps
+include "sick.inc"        # defines sick laser
+
+# smaller sim/real => slower simulations
+interval_sim 200  # simulation timestep in milliseconds
+interval_real 100  # real-time interval between simulation updates in milliseconds 
+
+paused 0
+
+# configure the GUI window
+window
+(
+  size [ 700.000 700.000 ] # in pixels
+  scale 37                 # pixels per meter
+  show_data 1              # 1=on 0=off
+)
+
+pioneer2dx_base_no_sonar
+(		  
+  # can refer to the robot by this name
+  name "r0"
+
+  pose [ 0 0 0 0 ] 
+  sicklaser( pose [ 0 0 0 0 ] ) 
+)

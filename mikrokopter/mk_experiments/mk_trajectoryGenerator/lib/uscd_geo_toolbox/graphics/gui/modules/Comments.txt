@@ -1,0 +1,7 @@
+Specialized modules for a GUI like
+
+- a tagged frame by TAG_FRAME,
+- a tabular by TAB_LIST,
+- a selection-list by SEL_LIST,
+- a listbox for messages by MSG_LIST and MSG_LOGO.
+

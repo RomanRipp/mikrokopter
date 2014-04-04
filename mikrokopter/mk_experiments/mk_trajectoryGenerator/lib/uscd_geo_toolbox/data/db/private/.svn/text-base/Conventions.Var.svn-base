@@ -1,0 +1,279 @@
+    :   :UNDEFINED                : :counts: :Undefined Variable
+   0:   :Undefined                :generic:units:format:Undefined Variable
+   1:P  :PRESSURE (DB)            :depth:dbar:f10.1:
+   2:D  :DEPTH (CM)               :depth:cm: :
+   3:D  :DEPTH (M)                :depth:m:f10.1:
+   4:P  :PRESSURE (PASCALS)       :depth:Pa: :
+   5:PD :PRESSURE DIFFERENCE (DB) :depth:dbar: :
+   6:ISO:ISOTHERM DEPTH (M)       :depth:m: :
+   7:SL :SEA LEVEL ANOMALY (M)    :depth:m: :
+   8:MLD:MIXED LAYER DEPTH (M)    :depth:m: :Program MIXDEP
+   9:P  :SEA LEVEL PRESSURE (MB)  :depth:mbar: :For Ferret
+  10:DYN:DYNAMIC METERS           :dynhgt:dyn-m:f10.4:
+  11:DYN:DYM HT (SUBSAMPLED DATA) :dynhgt: : :
+  12:dDN:DYNn-DYNs                :dynhgt: :f10.5:Diff of North and South Dyn Ht.
+  13:DYN:DYNAMIC HEIGHT (DYN CM)  :dynhgt:dyn-cm: :
+  14: dD:dDYN1-dDYN2 (DYN M)      :dynhgt:dyn-m: :Delta-Dyn (ctd1-ctd2) for geost vel calc
+  15:d1 :DYN1 (DYN M)             :dynhgt:dyn-m: :Dyn1 (ctd1) for geost vel calc
+  16:d2 :DYN2 (DYN M)             :dynhgt:dyn-m: :Dyn2 (ctd2) for geost vel calc
+  17:ZPG:ZONAL PRESSURE GRAD      : : : :Calculated for specific areas
+  20:T  :TEMPERATURE (C)          :temp:C:f10.2:1968 standard
+  21:AT :AIR TEMPERATURE (C)      :atemp:C: :
+    :WT :WET BULB TEMPERATURE (C)
+  22:T0 :THERM TEMPERATURE (C)    :temp:C: :Reversing therm. 1E35 indicates no therm.
+  23:AT :AIR TEMPERATURE MIN (C)  :atemp:C: :
+  24:AT :AIR TEMPERATURE MAX (C)  :atemp:C: :
+  25:T  :SST (C)                  :temp:C: :
+  26:T  :SST MIN (C)              :temp:C: :
+  27:T  :SST MAX (C)              :temp:C: :
+  28:T  :TEMPERATURE (C)          :temp:C: :1990 Standard
+  29:IT :TEMP INTEGRAL            :temp:C: :Depth integrated temperature
+  30:PT :POTENTIAL TEMP (C)       :potemp: : :PT = Potential Temperature
+  31:P4 :POTENTIAL TEMP 4000 (C)  :potemp: : :Potential temp with 4000m reference level
+  40:S  :SALINITY (PPT)           :sal:PPT:f10.2:From SALIN1
+  41:S  :SALINITY (PSU)           :sal:PSU: :Practical Salinity Units
+  42:S  :SALINITY (PSU)           :sal:PSU: :Practical Salinity Units
+  43:S0 :BOTTLE SALINITY (PSU)    :sal:PSU: :From Salinometer. 1E35 indicates no sample.
+  49:S  :SALINITY                 :sal: :f10.2:calculated for XBT's from mean T-S curve, M McCarty
+  50:C  :CONDUCTIVITY             :con: : :
+  55:ATTN:ATTENUATION             :attn:m-1:f7.5:added for r2d2 ctd data
+  60:O  :OXYGEN (ML/L)            :ox:ml/l:f10.2:Dissolved oxygen calculated from CTD values
+  61:BO :BOTTLE OXYGEN (ML/L)     :ox:ml/l: :DO determined by titration. 1E35 ->no sample
+  62:OST:OXYGEN, %SAT             :ox:%: :
+  64:AOU:APPARENT O2 UTILIZATION  :ox: : :
+  65:O  :OXYGEN (UMOL/KG)         :ox:umol/kg:f10.2:Dissolved oxygen calculated from CTD values
+  66:BO :BOTTLE OXYGEN (UMOL/KG)  :ox:umol/kg: :DO determined by titration. 1E35 ->no sample
+  70:ST :SIGMA-T                  :den:kg m-3:f10.2:
+  71:STH:SIGMA-THETA              :potden: : :
+  72:S2 :SIGMA 2                  :potden2: : :sigma-theta ref to 2000m
+  73:S3 :SIGMA 3                  :potden3: : :sigma-theta ref to 3000m
+  74:S4 :SIGMA 4                  :potden4: : :sigma-theta ref to 4000m
+  75:S5 :SIGMA 5                  :potden5: : :sigma-theta ref to 5000m
+  80:SV :SOUND VELOCITY (M/S)     : :m s-1: :
+  84:RHO:DENSITY (KG/M**3)        :den:kg m-3:f10.2:
+  85:SPV:SPECIFIC VOLUME          : : : :
+  86:SVA:SP VOL ANOM, 1E-8 M**3/KG: :m3 kg-1: :
+  90:BV :BVF (CPH)                : : : :Brunt Vaisala Frequency
+  91:BV2:BVF SQUARED (CPH**2)     : : : :Brunt Vaisala Frequency squared (N*ABS(N))
+  92:R  :RADIUS OF DEFORM         : : : :Integral bvf*dz/pi*f
+  93:RI :RICHARDSONS NUMBER       : : : :
+ 100:SN :SCAN NUMBER              : : : :
+ 101:FS :FRAME SYNC               : : : :FOR TOPS
+ 102:CL :PTG CLOCK WORD           : : : :
+ 103:BTL:NISKIN BOTTLE NUMBER     : : : :For Bottle files
+ 104:IQ :WOCE QUALITY NUMBER      : : : :See WOCE Document
+ 105:NAV:NUMBER POINTS IN AVERAGE : : : :
+ 106:BAT:BATTERY VOLTAGE          :bat:v:f3.1:ATLAS buoys
+ 110:OXC:OXYGEN CURRENT           : : : :
+ 111:OXT:OXYGEN TEMPERATURE       : : : :
+ 112:DOC:dOXC/dt                  : : : :Time rate of change of Oxygen current
+ 120:T' :GRADIENT DT/DZ           : : : :Program CTDGRD2
+ 121:DZT:GRADIENT DZ/DT           : : : :Program CTDGRD3
+ 122:T'X:GRADIENT DT/DX           : : : :X is longitude
+ 123:T'Y:GRADIENT DT/DY           : : : :Y is latitude
+ 124:UTX:U * dT/dx                : : : :X is longitude
+ 125:DZT:GRADIENT DZ/DT           : : : :Program CTDGRD3
+ 126:ADT:AD TEMP GRAD,DEG-C/DB    : : : :
+ 130:HTC:HEAT CONTENT (JOU/M**2)  : :J m-2: :
+ 131:SpH:SPECIFIC HEAT, J/KG-DEG-C: :J kg-1 C-1: :
+ 132:Qs :SHORTWAVE RADIATION      : :cal day-1 cm-2: :
+ 133:Qs :SHORTWAVE RADIATION      : :W m-2: :
+ 134:HQ :LOCAL HEATING            : : : :
+ 135:Ql :LONGWAVE RADIATION       : :cal day-1 cm-2: :
+ 136:Ql :LONGWAVE RADIATION       : :W m-2: :
+ 137:QH :LATENT HEAT              : :W m-2: :
+ 138:QB :SENSIBLE HEAT            : :W m-2: :
+ 140:QI :PENETRATIVE RADIA (PING) : : : :
+ 141:QT :QT=QS-QB-QE (PING)       : : : :
+ 142:QN :NET HEATING              : :W m-2: :
+ 143:VMF:VERTICAL+MERID HEAT FLUX : :W m-2: :
+ 144:ZMA:ZONAL+MERID HEAT ADVECT  : :W m-2: :
+ 145:VHF:VERTICAL HEAT FLUX       : :W m-2: :
+ 146:MHF:MERIDIONAL HEAT FLUX     : :W m-2: :
+ 147:ZHA:ZONAL HEAT ADVECTION     : :W m-2: :
+ 148:MHA:MERIDIONAL HEAT ADVECTION: :W m-2: :
+ 150:FR :FREON                    : : : :
+ 152:NO3:NITRATE (MG AT/L)        : : : :
+ 154:NO2:NITRITE                  : : : :
+ 156:PO4:PHOSPHATE (MG AT/L)      : : : :
+ 158:SI :SILICATE (MG AT/L)       : : : :mg at/l
+ 170:SPC:SPICE                    :spc : : :From Phyllis Stabeno (CTD data)
+ 182:NO3:NITRATE (micro Moles)    : :mic-M: :From Jim Murray
+ 184:NO2:NITRITE (micro Moles)    : :mic-M: :From Jim Murray
+ 186:PO4:PHOSPHATE (micro Moles)  : :mic-M: :From Jim Murray
+ 187:UR :UREA (micro Moles)       : :mic-M: :From Jim Murray
+ 188:SI :SILICATE (micro Moles)   :SiO2:mic-M: :From Jim Murray
+ 189:NH4:AMMONIA (micro Moles)    : :mic-M: :From Jim Murray
+ 200:DIS:VERTICAL DISPLACEMENT    : : : :From mean CTD profile
+ 210:SL :GEOSAT SEA LEVEL (M)     : :m: :Mean value over grid block
+ 220:AZ :AZIMUTH                  :az:degrees:f8.2:measure of ice floe rotation
+ 221:VAR:VARIANCE                 :var:cm s-1: :sqrt(u**2 + v**2) (current variance) 
+ 250:GHR:GLOBAL HORIZNTL RADIATION:ghr:kJ s-2 d-1:f8.2:global horizontal radiation
+ 251:PAR:PHOTOSYN ACTIVE RADIATION:par:M ph m-2 d-1:f5.2 :photosynthetically active radiation
+ 300:CS :CURRENT SPEED (CM/S)     : :cm s-1: :oceanographic (going to)
+ 301:BS :DRIFTER BUOY SPEED (M/S) : :m s-1: :calculated from lat,lon
+ 310:CD :CURRENT DIRECTION DEGREES: :degrees: :oceanographic (going to)
+ 311:BD :DRIFTER BUOY DIRECTION   : :degrees: :oceanographic (going to)
+ 318:BU :DRIFTER BUOY U (M/S)     :u:m s-1: :calculated from lat,lon
+ 319:BV :DRIFTER BUOY V (M/S)     :v:m s-1: :calculated from lat,lon
+ 320:U  :ZONAL CURRENT (CM/S)     :u:cm s-1: :measured w/r true N
+ 321:V  :MERIDIONAL CURRENT (CM/S):v:cm s-1: :measured w/r true N
+ 322:U  :ZONAL CURRENT (CM/S)     :u:cm s-1: :relative w/r true N
+ 323:V  :MERIDIONAL CURRENT (CM/S):v:cm s-1: :relative w/r true N
+ 324:U  :ZONAL CURRENT (CM/S)     :u:cm s-1: :instrument w/r true N
+ 325:V  :MERIDIONAL CURRENT (CM/S):v:cm s-1: :instrument w/r true N
+ 326:U  :ZONAL CURRENT (CM/S)     :u:cm s-1: :tracked w/r true N
+ 327:V  :MERIDIONAL CURRENT (CM/S):v:cm s-1: :tracked w/r true N
+ 328:W  :VERTICAL VELOCITY (CM/S) :w:cm s-1: :tracked TOPS
+ 329:W  :VERTICAL VELOCITY (CM/S) :w:cm s-1: :
+ 330:U  :ZONAL CURRENT (CM/S)     :u:cm s-1: :measured w/r magnetic N
+ 331:V  :MERIDIONAL CURRENT (CM/S):v:cm s-1: :measured w/r magnetic N
+ 332:U  :ZONAL CURRENT (CM/S)     :u:cm s-1: :relative w/r magnetic N
+ 333:V  :MERIDIONAL CURRENT (CM/S):v:cm s-1: :relative w/r magnetic N
+ 334:U  :ZONAL CURRENT (CM/S)     :u:cm s-1: :instrument w/r magnetic N
+ 335:V  :MERIDIONAL CURRENT (CM/S):v:cm s-1: :instrument w/r magnetic N
+ 336:U  :ZONAL CURRENT (CM/S)     :u:cm s-1: :tracked w/r magnetic N
+ 337:V  :MERIDIONAL CURRENT (CM/S):v:cm s-1: :tracked w/r magnetic N
+ 340:Ug :GEOSTROPHIC ZONAL (CM/S) : :cm s-1: :geostrophic
+ 341:Vg :GEOSTR MERIDIONAL (CM/S) : :cm s-1: :geostrophic
+ 342:Umg:Umodel-Ugeost (cm/s)     : :cm s-1: :
+ 344:Ut :TRACK NORMAL GEOST (CM/S): :cm s-1: :geostrophic vel normal to track
+ 350:HX :COMPASS HX               : : : :
+ 351:HY :COMPASS HY               : : : :
+ 360:AX :ACCELERATION AX          : : : :
+ 361:AY :ACCELERATION AY          : : : :
+ 362:AU :ACCELERATION AU          : : : :
+ 363:AV :ACCELERATION AV          : : : :
+ 370:X  :X POSITION IN NET        : : : :tracked TOPS position
+ 371:Y  :Y POSITION IN NET        : : : :tracked TOPS position
+ 372:Z  :Z POSITION IN NET        : : : :tracked TOPS position
+ 380:ZT :ZONAL TRANSPORT, M**2/SEC: :m2 s-1: :total transport per unit width
+ 381:MT :MERIDIONAL TRANSPRT,M^2/S:U:m2 s-1: :total transport per unit width
+ 382:ZT+:ZONAL TRANSPORT (+)      :V:m2 s-1: :positive zonal transport per unit width
+ 383:MT+:MERIDIONAL TRANSPORT (+) : :m2 s-1: :positive meridional transport per unit width
+ 384:ZT-:ZONAL TRANSPORT (-)      : :m2 s-1: :negative zonal transport per unit width
+ 385:MT-:MERIDIONAL TRANSPORT (-) : :m2 s-1: :negative meridional transport per unit width
+ 386:ZT :ZONAL TRANSPORT, M**3/SEC:U:m3 s-1: :volume transport
+ 387:MT :MERIDIONAL TRANSPRT,M^3/S:V:m3 s-1: :volume transport
+ 388:TR :TRK NORMAL TRNSPRT, M^3/S: :m3 s-1: :volume transport normal to track
+ 390:ZU :ZONAL TRANSPORT UPPER LIM: :m2 s-1: :transport per unit width
+ 391:MU :MERIDIONAL TRNS UPPER LIM: :m2 s-1: :transport per unit width
+ 392:ZL :ZONAL TRANSPORT LOWER LIM: :m2 s-1: :transport per unit width
+ 393:ML :MERIDIONAL TRNS LOWER LIM: :m2 s-1: :transport per unit width
+ 394:ZCW:ZONAL CURRENT WIDTH      : : : :
+ 395:MCW:MERIDIONAL CURRENT WIDTH : : : :
+ 396:Dx :ZONAL MOORING LINE DRAG  : : : :
+ 397:Dy :MERIDIANAL MOOR LINE DRAG: : : :
+ 398:DRG:DRAG ON MOORING LINE     : : : :
+ 400:WS :WIND SPEED (CM/S)        : :cm s-1: :
+ 401:WS :WIND SPEED (M/S)         : :m s-1: :
+ 402:WG :WIND GUST (M/S)          : :m s-1: :greatest speed in interval (drifters)
+ 410:WD :WIND DIRECTION           : :degrees: :     0-360 degrees
+ 411:WD :WIND DIRECTION           : :degrees: :     -180 to 180 degrees
+ 420:WU :WIND U (CM/S)            :u:cm s-1: :oceanographic sense (going to)
+ 421:WV :WIND V (CM/S)            :v:cm s-1: :oceanographic sense (going to)
+ 422:WU :WIND U (M/S)             :u:m s-1: :oceanographic sense (going to)
+ 423:WV :WIND V (M/S)             :v:m s-1: :oceanographic sense (going to)
+ 440:T-X:ZONAL WIND STRESS        :u:dyne cm-2: :Zonal Wind Stress
+ 441:T-Y:MERIDIONAL WIND STRESS   :v:dyne cm-2: :Meridional Wind Stress
+ 442:PTx:ZONAL PSEUDO WIND STRESS : :m2 s-2: :Zonal pseudo wind stress
+ 443:PTy:MERID PSEUDO WIND STRESS : :m2 s-2: :Meridional pseudo wind stress
+ 444:Txy:TOTAL PSEUDO WIND STRESS : :m2 s-2: :sqrt(PTx**2 + PTy**2)  (Prog WNDSTR)
+ 446: Tx:ZONAL WIND STRESS        : : : :Zonal true wind stress
+ 447: Ty:MERID WIND STRESS        : : : :Meridional true wind stress
+ 448:Txy:TOTAL WIND STRESS        : : : :sqrt(Tx**2 + Ty**2) (Prog WNDSTR)
+ 450:WW :WIND WORK                : :m3 s-3: :Wind work
+ 460:U'X:GRADIENT DU/DX           : :1E-5 s-1: :X is longitude
+ 461:V'X:GRADIENT DV/DX           : :1E-5 s-1: :X is longitude
+ 462:U'Y:GRADIENT DU/DY           : :1E-5 s-1: :Y is latitude
+ 463:V'Y:GRADIENT DV/DY           : :1E-5 s-1: :Y is latitude
+ 480:OLR:OLR W/M**2               : : : :Outgoing long wave radiation
+ 500:LAT:LATITUDE                 : :degree_north:f10.4:EPIC: N is positive, S is negative
+ 501:LON:LONGITUDE                : :degree_west:f10.4:Classic EPIC: W is pos, eg, 165W=165, 170E=190
+ 502:LON:LONGITUDE                : :degree_east:f10.4:New EPIC: E is pos, eg, 165E=165, 170W=190
+ 600:TIM:TIME (EPIC)              :time: :f10.0:EPIC Time series time hhmm as real number
+ 620:DAT:DATE (EPIC)              :time: :f10.0:EPIC Time series date yymmdd as real number
+ 621:DAT:MMDD.HHMM                :time: : :Date,Time without year (mmdd.hhmm, real no)
+ 622:TIM:GREENWICH DAYS           :time: : :Days from the start of the century
+ 623:TIM:GEOSAT DAYS              :time: : :Days after 85/01/01
+ 624:TIM:EPIC SYSTEM TIME         :time: : :2 integers, jul day, millisec since midnight
+ 625:TIM:SECONDS SINCE START      :time:s: :integer, delta seconds
+ 626:TIM:DAYS SINCE START         :time:d: :real, delta seconds
+ 650:H  :LAYER THICKNESS          :H:m: :Mick Spillane's model
+ 651:n  :LAYER NUMBER             :n: : :Mick Spillane's model
+ 700:SD :STANDARD DEVIATION       : : : :
+ 710:N  :NUMBER OF POINTS         : : : :
+ 721:PG :PERCENT GOOD PINGS       : : : :Acoustic Doppler
+ 722:EV :ERROR VELOCITY           : : : :RD Acoustic Doppler
+ 723:AMP:AMPLITUDE                : : : :RD Acoustic Doppler
+ 810:SDD:STAND. DEV. (DYN.HT)     : : : :
+ 820:SDT:STAND. DEV. (TEMP)       : : : :
+ 840:SDS:STAND. DEV. (SAL)        : : : :
+ 841:SD+:SAL+STAND. DEV.          : : : :
+ 842:SD-:SAL-STAND. DEV.          : : : :
+ 843:S+2:SAL+2 STAND. DEV.        : : : :
+ 844:S-2:SAL-2 STAND. DEV.        : : : :
+ 901:Fvt:Fluorometer Volts(CTD)   : :Volts: :
+ 902:Irr:Irradiance(CTD)          : :mEin cm-1 s-2: :
+ 903:F  :Fluorometer (CTD)        : :mg m-3: :J.Murray 5/13/92
+ 904:Tr :Transmissometry (CTD)    : :%: :J.Murray 5/13/92
+ 905:PAR:Photosynthetic Active Radiation: :mEin m-2: :J.Murray 5/13/92
+ 910:RH :RELATIVE HUMIDITY (%)    : :%: :PERCENT
+ 911:RH :RELATIVE HUMIDITY MIN (%): :%: :
+ 912:RH :RELATIVE HUMIDITY MAX (%): :%: :
+ 913:SH :SPECIFIC HUMIDITY (G/KG) : :g kg-1: :For Ferret
+ 915:BP :BAROMETRIC PRESSURE (MB) : :mbar: :
+ 920:CC :CLOUD COVER (OKTAS)      : : : :OKTAS
+1141:YDF:MERID DIFFUS HEAT FLUX   : :W m-2: :ping 12/10/90
+1142:MHF:MERID ADVECT HEAT FLUX   : :W m-2: :ping 12/10/90
+1143:VE :VERTICAL ENTRAINMENT     : :W m-2: :ping 12/10/90
+1144:Qt :HEAT CONTENT CHANGE      : :W m-2: :ping 12/11/90
+1145:Qt*:QT*=QNET+QU+QW+QZ        : :W m-2: :ping 12/11/90
+1201:ERR:ERROR VELOCITY           :err:cm s-1:f8.1:ADCP Error Velocity
+1202:AGC:AVERAGE BACKSCATTER (AGC):AGC:counts:f5.1:Avg (all beams) ADCP Amplitude Gain Control
+1203:PCT:PERCENT GOOD PINGS       : : : :ADCP Percent Good Pings
+1204:W  :VERTICAL VELOCITY        :w:cm s-1: :ADCP Vertical Velocity
+1205:U  :EAST VELOCITY            :u:cm s-1: :ADCP East Velocity
+1206:V  :NORTH VELOCITY           :v:cm s-1: :ADCP North Velocity
+1207:REC:RECORDS                  : : : :ADCP Records
+1208:PNG:PINGS                    : : : :ADCP Pings
+1209:SD :STD DEV of BACKSCATTER(AGC):sd: :f5.1:Std Dev of 1202 Bin Avg Backscatter Intens.
+1210:Rst:RDI STATUS:              : : :ADCP Status
+1211:T  :INST TEMPERATURE (C)     :temp:C:f10.2:Instrument Temperature
+1215:HDG:INST HEADING             :heading:degrees:f10.2:Instrument heading
+1216:PIT:INST PITCH               :pitch:degrees:f10.2:Instrument pitch
+1217:ROL:INST ROLL                :roll:degrees:f10.2:Instrument roll
+1221:EI1:Echo Intensity of Beam1  : :counts: :ADCP EI1
+1222:EI2:Echo Intensity of Beam2  : :counts: :ADCP EI2
+1223:EI3:Echo Intensity of Beam3  : :counts: :ADCP EI3
+1224:EI4:Echo Intensity of Beam4  : :counts: :ADCP EI4
+1231:Bk1:Backscatter(mean)        : : : :ADCP Backscatter mean,ref last bin
+1232:Bk2:Backscatter(mean)        : : : :ADCP Backscatter mean,ref calc
+1241:PG1:Percent Good of Beam1  : :pct: :ADCP PG1
+1242:PG2:Percent Good of Beam2  : :pct: :ADCP PG2
+1243:PG3:Percent Good of Beam3  : :pct: :ADCP PG3
+1244:PG4:Percent Good of Beam4  : :pct: :ADCP PG4
+1251:ST1:Status of Beam1  : :: :ADCP Status1
+1252:ST2:Status of Beam2  : :: :ADCP Status2
+1253:ST3:Status of Beam3  : :: :ADCP Status3
+1254:ST4:Status of Beam4  : :: :ADCP Status4
+1260:BTE  :BT ERROR VELOCITY           :err:cm s-1: :ADCP BT Error Velocity
+1261:BTU  :BT EAST VELOCITY            :u:cm s-1: :ADCP BT East Velocity
+1262:BTV  :BT NORTH VELOCITY           :v:cm s-1: :ADCP BT North Velocity
+1263:BTW  :BT VERTICAL VELOCITY        :w:cm s-1: :ADCP BT Vertical Velocity
+1264:BR1  :BT RANGE 1                  ::m: :ADCP BT Range Beam1
+1265:BR2  :BT RANGE 2                  ::m: :ADCP BT Range Beam2
+1266:BR3  :BT RANGE 3                  ::m: :ADCP BT Range Beam3
+1267:BR4  :BT RANGE 4                  ::m: :ADCP BT Range Beam4
+1268:BRA  :BT AVERAGE RANGE            ::m: :ADCP BT Range Average
+1269:BRD  :BT RANGE STDEV              ::m: :ADCP BT Range St Dev
+1301:BPR  :BOTTOM PRESSURE             ::PSIA: :Pounds Per Square Inch Absolute
+1900:V00:VARIABLE 0               : : : :
+1901:V01:VARIABLE 1               : : : :
+1902:V02:VARIABLE 2               : : : :
+1903:V03:VARIABLE 3               : : : :
+1904:V04:VARIABLE 4               : : : :
+1905:V05:VARIABLE 5               : : : :
+1906:V06:VARIABLE 6               : : : :
+1907:V07:VARIABLE 7               : : : :
+1908:V08:VARIABLE 8               : : : :

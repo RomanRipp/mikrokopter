@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/rsn-svn/!svn/ver/2395/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/srv
+END
+_GetRendezvousPoint.py
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/srv/_GetRendezvousPoint.py
+END
+_SetGPSWaypoint.py
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/srv/_SetGPSWaypoint.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/rsn-svn/!svn/ver/2395/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/srv/__init__.py
+END
+_listwp.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/srv/_listwp.py
+END
+_SetSerialPoti.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/srv/_SetSerialPoti.py
+END
+_SetLanding.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/srv/_SetLanding.py
+END
+_SetNavigation.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/srv/_SetNavigation.py
+END
+_SetTakeoff.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/rsn-svn/!svn/ver/2371/code/umn-ros-pkg/rsn/mikrokopter/mk_msgs/src/mk_msgs/srv/_SetTakeoff.py
+END

@@ -1,0 +1,291 @@
+#include "hexaWrap.h"
+
+using namespace std;
+using namespace ros;
+
+ExternControl_t ExternControl;
+
+Publisher Nick_pub;
+Publisher Roll_pub;
+//TODO declare Altitude and ...
+
+speed_t getBaud(int speed){
+	switch(speed){
+		case 9600:
+         		return B9600;
+      		case 19200:
+         		return B19200;
+       		case 38400:
+			return B38400;
+	       	case 57600:
+         		return B57600;
+       		case 115200:
+         		return B115200;
+       		case 230400:
+         		return B230400;
+      		default:                 // invalid bitrate
+         		return B0; 	
+	} 
+}
+
+void openSerial(char *portname, int speed){
+	ROS_INFO("Opening serial port for communication");
+
+	struct termios options;
+	tcgetattr(fd, &options);
+	speed_t serialBaud = getBaud(speed);
+	cfsetispeed(&options, serialBaud);
+	cfsetospeed(&options, serialBaud);
+	tcsetattr(fd, TCSANOW, &options);
+
+	fd = open (portname, O_RDWR | O_NOCTTY | O_NDELAY);  
+  	if (fd < 0)
+  	{
+		ROS_INFO("Error opening serial port");
+  	}else
+  	{
+		fcntl(fd, F_SETFL, 0);
+		ROS_INFO("Serial port opened");
+  	}
+	options.c_cflag &= ~PARENB;    // set no parity, stop bits, data bits
+	options.c_cflag &= ~CSTOPB;
+	options.c_cflag &= ~CSIZE;
+	options.c_cflag |= CS8;
+	tcsetattr(fd, TCSANOW, &options);
+}
+
+int receiveData(){
+	unsigned char buf[RXD_BUFFER_LENGTH];
+	int ReceivedBytes = 0;
+	int ptr_rxd_buffer = 0;
+	int nLength = read(fd, buf, sizeof buf);
+	cout<<"\nReceived: "<<buf<<endl;
+//	for (int i=0;i<nLength; i++) 	
+//		cout<<" "<<(int) buf[i];	
+	unsigned char c;
+	unsigned char crc1, crc2;
+	unsigned int crc;
+	//if (nLength<=1) return 0;
+	for (int i = 0; i<nLength; i++){
+		c = buf[i];
+		if ((ptr_rxd_buffer == 0) && (c == '#')){
+			g_rxd_buffer[ptr_rxd_buffer++]=c;
+			crc=c;		
+		}
+		else if (ptr_rxd_buffer < RXD_BUFFER_LENGTH){
+			if ((int) c != 10){		                                 					g_rxd_buffer[ptr_rxd_buffer++] = c; // copy byte to rxd buffer
+				crc += c; 
+                         }
+                         else // termination character was received
+                         {
+                                 crc -= g_rxd_buffer[ptr_rxd_buffer-2];
+                                 crc -= g_rxd_buffer[ptr_rxd_buffer-1];
+                                 // calculate checksum from transmitted data
+                                 crc %= 4096;
+                                 crc1 = '=' + crc / 64;
+                                 crc2 = '=' + crc % 64;
+                                 if((crc1 == g_rxd_buffer[ptr_rxd_buffer-2]) && (crc2 == g_rxd_buffer[ptr_rxd_buffer-1]))
+                                 {   // checksum valid
+                                         g_rxd_buffer[ptr_rxd_buffer] = '\r';
+                                         ReceivedBytes = ptr_rxd_buffer + 1;
+                                 }
+                                 else
+                                 {       // checksum invalid
+                                         ptr_rxd_buffer = 0; 
+                                         return -1;
+                                 }
+                                 ptr_rxd_buffer = 0; 
+                         }
+                 }
+                 else 
+                 {
+                         ptr_rxd_buffer = 0;
+                 }
+	}
+return ReceivedBytes;
+} 
+
+void decode(int receivedBytes) {
+	unsigned char a,b,c,d;
+        unsigned char x,y,z;
+        int ptrIn = 3;
+        int ptrOut = 3;
+	int len = receivedBytes;
+	int i=0;
+ 
+         while(len)
+         {	
+                 a = g_rxd_buffer[ptrIn++] - '=';
+                 b = g_rxd_buffer[ptrIn++] - '=';
+                 c = g_rxd_buffer[ptrIn++] - '=';
+                 d = g_rxd_buffer[ptrIn++] - '=';
+
+                 x = (a << 2) | (b >> 4);
+                 y = ((b & 0x0f) << 4) | (c >> 2);
+                 z = ((c & 0x03) << 6) | d;
+
+                 if(len--) {
+				i=ptrOut++;
+				g_rxd_buffer[i] = x; 
+		} else break;
+                 if(len--) {
+				i=ptrOut++;
+				g_rxd_buffer[i] = y; 
+		} else break;
+                 if(len--) {
+				i=ptrOut++;
+				g_rxd_buffer[i] = z; 
+		} else break;
+         }
+         //g_pRxData = &g_rxd_buffer;
+         g_RxDataLen = ptrOut - 3;
+}
+
+void sendCommand(){
+	write (fd, g_txd_buffer, 22);
+	cout<<"Send: "<<g_txd_buffer<<endl;
+}
+
+void encode(unsigned char cmd,int addr, unsigned char* data, unsigned char dataLen)
+{
+	unsigned int pt = 0;
+	unsigned char a,b,c;
+	unsigned char ptr = 0;
+	g_txd_buffer[pt++] = '#';               // Start-Byte
+	g_txd_buffer[pt++] = 'a' + addr;        // Adress
+     	g_txd_buffer[pt++] = cmd;               // Command
+     	while(dataLen)
+     	{
+      	if(dataLen) { a = data[ptr++]; dataLen--;} else a = 0;
+      	if(dataLen) { b = data[ptr++]; dataLen--;} else b = 0;
+      	if(dataLen) { c = data[ptr++]; dataLen--;} else c = 0;
+  	g_txd_buffer[pt++] = '=' + (a >> 2);
+        g_txd_buffer[pt++] = '=' + (((a & 0x03) << 4) | ((b & 0xf0) >> 4));
+        g_txd_buffer[pt++] = '=' + (((b & 0x0f) << 2) | ((c & 0xc0) >> 6));
+        g_txd_buffer[pt++] = '=' + ( c & 0x3f);
+       	}	
+	AddCRC(pt);
+}
+
+void AddCRC(int DataBufferLength)
+{
+	unsigned int tmpCRC = 0;
+	int i = 0;
+	for(i = 0; i <  DataBufferLength;i++)
+	{
+		tmpCRC += g_txd_buffer[i];
+	}
+	tmpCRC %= 4096;
+	g_txd_buffer[i++] = '=' + tmpCRC / 64;
+	g_txd_buffer[i++] = '=' + tmpCRC % 64;
+	g_txd_buffer[i++] = '\r';
+}
+
+void publish(){
+	switch(g_rxd_buffer[2]){
+		case 'k':
+			std_msgs::Int8 temp;
+
+			temp.data=rescale((int)g_rxd_buffer[3],(int)g_rxd_buffer[4]);	
+			Nick_pub.publish(temp);
+
+			temp.data=rescale((int)g_rxd_buffer[5],(int)g_rxd_buffer[6]);
+			Roll_pub.publish(temp);
+
+			//TODO Publish Altitude and ... 
+		break;
+		//TODO GPS data publish
+	}
+}
+
+int rescale(int b1, int b2){
+	int val = 0;
+	if(b2<122) val = b1+b2*255;
+	else val = (b1-255)+(b2-255)*255; 
+	return val;
+}
+
+void Callback(const mk_msgs::MKCommands msg){
+
+	ExternControl.Throttle = msg.gas;
+	ExternControl.Roll = msg.roll;
+        ExternControl.Pitch =msg.pitch;
+        ExternControl.Yaw =msg.yaw;
+/*        ExternControl.Throttle =msg.gas;
+        ExternControl.Height =msg.height;
+        ExternControl.free =msg.free;
+        ExternControl.Frame =msg.frame;
+        ExternControl.Config =msg.config;
+*/
+
+	ExternControl.Frame ='f';
+	encode('b', 1, (unsigned char*) &ExternControl, sizeof(ExternControl));
+	sendCommand();
+}
+
+int main(int argc, char** argv){
+  	ROS_INFO("Hexacopter wrapper started...");
+	int baudSp = validSpeed(argv[2]);
+	int St; 
+  	init(argc,argv,"wrapper");
+  	NodeHandle nh("/copterData/");
+
+	openSerial(argv[1], baudSp);
+	//External control initialization
+	encode('g', 1, 0, 0);
+	sendCommand();
+	ExternControl.Digital[0] =0;
+        ExternControl.Digital[1] =0;
+        ExternControl.RemoteButtons =0;
+        ExternControl.Pitch =0;
+        ExternControl.Roll =0;
+        ExternControl.Yaw =0;
+        ExternControl.Throttle =0;
+        ExternControl.Height =0;
+        ExternControl.free =0;
+        ExternControl.Frame =0;
+        ExternControl.Config =1;
+
+	//control structure initialization
+	Subscriber Ctrl_sub = nh.subscribe<mk_msgs::MKCommands>("/cmd", 1000, Callback);
+		
+	//Topic initialization
+	Nick_pub = nh.advertise<std_msgs::Int8>("Nick", 1000);
+	Roll_pub = nh.advertise<std_msgs::Int8>("Roll", 1000);	
+	//TODO Advertise other values
+
+  	Rate Loop_rate(10);
+  	while(ok()){
+		St = receiveData(); //receiving data from FC
+		if (St>0){
+			decode(St);
+//			for (int i=3;i<21; i++) 	
+//				cout<<" "<<(int) g_rxd_buffer[i];	
+			publish();
+		}
+
+		Duration(0.1).sleep();
+		spinOnce();
+  	}
+  	spin();
+  	return 0;
+}
+
+int validSpeed(char* in){
+while (true){
+	int speed = atoi(in);
+	if (speed == 9600 ||
+ 		speed == 19200 || 
+		speed == 38400 || 
+		speed == 57600 || 
+		speed == 115200 || 
+		speed == 230400){		
+		return speed;
+	}else{
+		cout<<"Baud speed value is incorrect, try again"<<endl;
+		cin>>in;
+	}
+}
+return 0;
+}
+

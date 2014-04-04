@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf
+END
+hdf2cdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/hdf2cdf.m
+END
+assign_cdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/assign_cdf.m
+END
+add_cdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/add_cdf.m
+END
+assign_hdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/assign_hdf.m
+END
+write_cdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/write_cdf.m
+END
+udunits.dat
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/udunits.dat
+END
+Comments.txt
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/Comments.txt
+END
+ctd2cdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/ctd2cdf.m
+END
+ncmex.m
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/ncmex.m
+END
+mnc2m.m
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/mnc2m.m
+END
+create_cdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/create_cdf.m
+END
+ctd.cdl
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/ctd.cdl
+END
+look_cdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/look_cdf.m
+END
+chk_cdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/chk_cdf.m
+END
+cnf_cdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/cnf_cdf.m
+END
+cat_cdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/cat_cdf.m
+END
+renamecdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/renamecdf.m
+END
+check_att.m
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/check_att.m
+END
+look_hdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/look_hdf.m
+END
+read_cdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/read_cdf.m
+END
+wrt_cdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/wrt_cdf.m
+END
+ctd.mnc
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/ctd.mnc
+END
+cdf_file.m
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/cdf_file.m
+END
+load_cdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/load_cdf.m
+END
+read_hdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/read_hdf.m
+END
+lim_cdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/lim_cdf.m
+END
+Contents.m
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/netcdf/Contents.m
+END

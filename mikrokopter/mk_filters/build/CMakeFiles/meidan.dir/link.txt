@@ -1,0 +1,1 @@
+/usr/bin/c++   -O2 -g     -pthread CMakeFiles/meidan.dir/src/medFilter.o  -o ../bin/meidan -rdynamic -L/opt/ros/fuerte/lib -lroscpp -lrostime -lrosconsole -lroscpp_serialization -lxmlrpcpp -Wl,-rpath,/opt/ros/fuerte/lib 

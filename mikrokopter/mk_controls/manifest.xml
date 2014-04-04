@@ -1,0 +1,17 @@
+<package>
+  <description brief="mk_controls">
+
+     mk_controller
+
+  </description>
+  <author>Roman Ripp</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/mk_controls</url>
+	<depend package="roscpp"/>
+	<depend package="mk_msgs"/>
+	<depend package="armadillo_wrapper"/>
+	<depend package="tf"/>
+</package>
+
+

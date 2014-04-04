@@ -1,0 +1,102 @@
+#include <ros/ros.h>
+#include <iostream>
+#include <stdio.h>
+#include <vector> 
+
+using namespace std;
+using namespace ros;
+
+int main(int argc, char** argv){
+	ROS_INFO("Median Filter");
+	init(argc,argv,"TelOp");
+	NodeHandle nh;
+	Publisher motorcomout = nh.advertise<mk_msgs::motorCommands>("/mikrokopter/commands/motor",5);
+	Publisher navicomout = nh.advertise<mk_msgs::naviCommands>("/mikrokopter/commands/navi",5);
+	Rate Loop_rate(10);
+	int Gas = 0;
+	float Roll = 0;
+	float Pitch = 0;
+	float Yaw = 0;
+	int latitude = atoi(argv[2]);
+	int longitude = atoi(argv[1]);
+	int altitude = atoi(argv[3]);
+	int mode = atoi(argv[4]);
+	int index = 1;
+
+	sleep(1);
+
+	//Wright waypoints: 
+	mk_msgs::naviCommands msg;
+	msg.status = 1;
+	msg.heading = 1;
+	msg.toleranceRadius = 1;
+	msg.holdTime = 1;
+	msg.eventFlag = 0;
+	msg.type = 0;
+	msg.eventChannel = 1;
+	msg.altitudeRate = 1;
+	msg.speed = 1;
+	msg.camAngle = 1;
+
+	//WP#1:
+	msg.longitude = longitude;
+	msg.latitude = latitude;
+	msg.altitude = altitude;		
+	msg.index = index;
+
+	cout<<"Latitude: "<<msg.latitude<<" Longitude: "<<msg.longitude<<" Altitude: "<<msg.altitude<<" WP"<<msg.index<<endl;			
+	navicomout.publish(msg);
+	
+	//WP2:
+	index++;
+	msg.longitude = -93.2329895;
+	msg.latitude = 44.9746007;
+	msg.altitude = 10;		
+	msg.index = index;
+	cout<<"Latitude: "<<msg.latitude<<" Longitude: "<<msg.longitude<<" Altitude: "<<msg.altitude<<" WP"<<msg.index<<endl;			
+	navicomout.publish(msg);
+
+	//WP3:
+	index++;
+	msg.longitude = -93.2329895;
+	msg.latitude = 44.9746000;
+	msg.altitude = 10;		
+	msg.index = index;
+	cout<<"Latitude: "<<msg.latitude<<" Longitude: "<<msg.longitude<<" Altitude: "<<msg.altitude<<" WP"<<msg.index<<endl;			
+	navicomout.publish(msg);
+
+	while(ok()){
+		
+		if (mode == 1){
+			if (mykbhit()){
+				c = mygetch();
+				switch (c){
+					case '=' : Gas++; break;
+					case '-' : Gas--; break;
+					case ']' : Roll=Roll+0.1; break;
+					case '[' : Roll=Roll-0.1; break;
+					case ';' : Pitch=Pitch+0.1; break;
+					case 'l' : Pitch=Pitch-0.1; break;
+					case '/' : Yaw=Yaw+0.1; break;
+					case '.' : Yaw=Yaw-0.1; break;
+
+				}
+				if (Gas<0) Gas=0;
+			}
+			cout<<"Key: "<<(char)i<<" Gas: "<<Gas<<" Roll: "<<Roll<<" Pitch: "<<Pitch<<" Yaw: "<<Yaw<<endl;
+			mk_msgs::motorCommands msg;
+			msg.gas = Gas;
+			msg.roll = Roll;
+			msg.pitch = Pitch;
+			msg.yaw = Yaw;		
+			motorcomout.publish(msg);
+		}else if (mode == 2){
+
+		}
+		Duration(0.1).sleep();
+		spinOnce();
+	}
+
+	spin();
+	return 0;
+}

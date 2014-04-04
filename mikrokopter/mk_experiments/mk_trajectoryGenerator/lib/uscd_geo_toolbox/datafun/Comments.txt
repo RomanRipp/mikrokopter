@@ -1,0 +1,18 @@
+Data analysis and Modifications
+
+Functions take care about NaN's:  COVNAN, GRADNAN, SUMNAN
+                                  MEDNAN, MEANNAN, STDNAN
+
+Interpolation: AKIMA, INTERP0, INTERPG, INTERPC, INTERPM
+               REPL_NAN, FILLNAN
+
+Filtering: MEANIND1, MEANIND2, MFILTER, GRPMEAN, NOISE
+
+Indexing: IND2GRP, GRP2IND, INSERT, REMFOLLW
+
+Mapping: OBJMAP, OBANA, KRIGING
+
+Griding: MONOGRID, MKGRID
+
+other: INELLIP, ONLINE, PSPIKE, ZEROSIZE
+       HEPIRO, JOINVEC, GET_EOF, ISOAREA

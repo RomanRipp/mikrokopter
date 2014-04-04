@@ -1,0 +1,6 @@
+<Artifact Name="TheSkyBox">
+	<Visual Name="TheSkyBox" Type="SkyBox">
+<!-- 		<Config SkyBoxMaterial="Skyboxes/MountainRing" SkyboxDistance="1000" EnableFog="false" FogType="0" FogColor="1 1 1" FogDensity="0.01"></Config> -->
+		<Config SkyBoxMaterial="Skyboxes/GlacierNight" SkyboxDistance="1000" EnableFog="false" FogType="0" FogColor="1 1 1" FogDensity="0.01"></Config>
+	</Visual>
+</Artifact>

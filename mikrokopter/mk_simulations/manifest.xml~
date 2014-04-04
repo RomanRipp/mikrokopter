@@ -1,0 +1,20 @@
+<package>
+  <description brief="mk_simulations">
+
+     mk_simulations
+
+  </description>
+  <author>Johannes Laechele</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/mk_simulations</url>
+  <depend package="ssx"/>
+  <depend package="ssx_framework"/>
+  <depend package="ssx_drv_QRPosCtrl"/>
+  <depend package="ssx_ext_DebugDrawing"/>
+  <depend package="ssx_ext_ROSModule"/>
+  <depend package="ssx_med_core"/>
+
+</package>
+
+

@@ -1,0 +1,17 @@
+Header header
+
+# between -pi to +pi
+int32 longitude
+int32 latitude
+int32 altitude
+
+# between 0 to 1
+int64 gas
+
+#between 0 to pi
+int64 height
+
+#
+int64 free
+int64 frame
+int64 config

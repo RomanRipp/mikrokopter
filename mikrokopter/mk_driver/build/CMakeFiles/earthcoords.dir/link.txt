@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -O2 -g  -pthread   -shared -Wl,-soname,libearthcoords.so -o ../lib/libearthcoords.so CMakeFiles/earthcoords.dir/src/EarthCoords.o -L/opt/ros/fuerte/lib -lroscpp -lrostime -lrosconsole -lroscpp_serialization -lxmlrpcpp -Wl,-rpath,/opt/ros/fuerte/lib 

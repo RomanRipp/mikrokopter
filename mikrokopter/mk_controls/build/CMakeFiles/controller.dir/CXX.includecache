@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/src/pidcontroller.cpp
+mk_behaviors/pidcontroller.h
+/home/loki/Documents/ros_workspace/mikrokopter/mk_controls/src/mk_behaviors/pidcontroller.h
+

@@ -1,0 +1,21 @@
+
+(cl:in-package :asdf)
+
+(defsystem "mk_msgs-srv"
+  :depends-on (:roslisp-msg-protocol :roslisp-utils )
+  :components ((:file "_package")
+    (:file "SetSerialPoti" :depends-on ("_package_SetSerialPoti"))
+    (:file "_package_SetSerialPoti" :depends-on ("_package"))
+    (:file "SetGPSWaypoint" :depends-on ("_package_SetGPSWaypoint"))
+    (:file "_package_SetGPSWaypoint" :depends-on ("_package"))
+    (:file "GetRendezvousPoint" :depends-on ("_package_GetRendezvousPoint"))
+    (:file "_package_GetRendezvousPoint" :depends-on ("_package"))
+    (:file "listwp" :depends-on ("_package_listwp"))
+    (:file "_package_listwp" :depends-on ("_package"))
+    (:file "SetLanding" :depends-on ("_package_SetLanding"))
+    (:file "_package_SetLanding" :depends-on ("_package"))
+    (:file "SetTakeoff" :depends-on ("_package_SetTakeoff"))
+    (:file "_package_SetTakeoff" :depends-on ("_package"))
+    (:file "SetNavigation" :depends-on ("_package_SetNavigation"))
+    (:file "_package_SetNavigation" :depends-on ("_package"))
+  ))

@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean
+END
+oxsat_umol.m
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/oxsat_umol.m
+END
+snd_spd.m
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/snd_spd.m
+END
+swstate.m
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/swstate.m
+END
+gravit.m
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/gravit.m
+END
+distbear.m
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/distbear.m
+END
+bulk.m
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/bulk.m
+END
+Contents.m
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/Contents.m
+END
+sal78.m
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/sal78.m
+END
+oxsat.m
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/oxsat.m
+END
+sigma.m
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/sigma.m
+END
+theta.m
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/theta.m
+END
+Comments.txt
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/Comments.txt
+END
+adiabatt.m
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/adiabatt.m
+END
+cpsw.m
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/cpsw.m
+END
+pts2z.m
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/pts2z.m
+END
+wekman.m
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/wekman.m
+END
+zts2p.m
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/zts2p.m
+END
+p2z80.m
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/p2z80.m
+END
+sodano.m
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/sodano.m
+END
+z2p80.m
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/z2p80.m
+END
+gravity.m
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/gravity.m
+END
+alpha.m
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/alpha.m
+END
+sal80.m
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/rsn-svn/!svn/ver/2794/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox/ocean/sal80.m
+END

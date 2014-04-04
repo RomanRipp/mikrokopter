@@ -1,0 +1,138 @@
+10
+
+dir
+2801
+https://www-users.cs.umn.edu/rsn-svn/code/umn-ros-pkg/rsn/mikrokopter/mk_experiments/mk_trajectoryGenerator/lib/uscd_geo_toolbox
+https://www-users.cs.umn.edu/rsn-svn
+
+
+
+2014-01-22T21:47:22.538199Z
+2794
+tokekar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6dc5d124-7f57-0410-9144-d7a54397c772
+
+ocean
+dir
+
+.download
+dir
+
+Contents.m
+file
+
+
+
+
+2014-01-24T17:44:35.841964Z
+3c88e80ffcf53ad00a0e69e2380fce20
+2014-01-22T21:47:22.538199Z
+2794
+tokekar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+717
+
+misc
+dir
+
+matlab
+dir
+
+graphics
+dir
+
+calc
+dir
+
+netcdf
+dir
+
+diskfun
+dir
+
+Comments.txt
+file
+
+
+
+
+2014-01-24T17:44:35.841964Z
+d236088e705f624dd57e4d68c7331a86
+2014-01-22T21:47:22.538199Z
+2794
+tokekar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+33
+
+object
+dir
+
+data
+dir
+
+geo
+dir
+
+strfun
+dir
+
+datafun
+dir
+
+unix
+dir
+

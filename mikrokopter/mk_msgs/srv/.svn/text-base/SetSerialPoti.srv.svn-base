@@ -1,0 +1,13 @@
+# Set a GPS Waypoint on the MikroKopter
+#
+# Request data here (0:+255)
+int32 poti1
+int32 poti2
+int32 poti3
+int32 poti4
+
+---
+# Acknowledgment
+# -1: poti is not written
+# +1: poti si written
+int16 ack

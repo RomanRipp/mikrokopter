@@ -1,0 +1,24 @@
+Access NetCDF-DataFiles
+
+Use LOOK_CDF for a quick look into a NetCDF-DataFile.
+
+Use ASSIGN_CDF or READ_CDF to load NetCDF-Data directly.
+
+Similar functions exist to read HDF-SD-DataFiles.
+
+Use LOAD_CDF to load gridded NetCDF-Data. To use
+LOAD_CDF a ConfigFile has to exist, which describes 
+max. 4 Dimensions (X, Y, Z and Time) and DataVariables
+for a NetCDF-DataFile. Use CNF_CDF to create a ConfigFile.
+
+Write NetCDF-DataFiles with WRITE_CDF or WRT_CDF.
+
+Take care that a valid platform-depended 
+MEX-file-interface like MEXCDF or MEXNC exist
+to access NetCDF-DataFiles. 
+
+MEX-file-interfaces should located in "mexcdf/".
+
+Additional tools to work with NetCDF-data can be found here:
+
+http://mexcdf.sourceforge.net/

@@ -1,0 +1,171 @@
+#include <ros/ros.h>
+#include <tf/transform_broadcaster.h>
+#include <nav_msgs/Odometry.h>
+#include <std_msgs/Int16.h>
+#include <iostream>
+#include <math.h>
+#include <fstream>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+using namespace std;
+using namespace nav_msgs;
+
+double Rttn=0;
+double Spd=0;
+double xf[128];
+double yf[128];
+int PathLength;
+double DesiredAng=0;
+int Go = 1;
+int i;
+
+void position (const OdometryConstPtr &odom)
+{	
+	
+	double x=odom->pose.pose.position.x;
+	double y=odom->pose.pose.position.y;
+	double Ang=0;
+	double Precision = 1.0e-2;
+	
+	// Get desired position from vector(x,y;xf,yf)
+cout<<"Go: "<<Go<<endl;
+if (Go == 1) {
+	double Pi=3.1415926535897;
+	
+	if ((xf[i]-x) == 0 and (yf[i]-y)>0) DesiredAng=Pi/2;
+		else if ((xf[i]-x)==0 and (yf[i]-y)<0) DesiredAng=3*Pi/2;
+	if (abs(xf[i]-x) > 0)
+			{		
+			Ang = atan2(abs(yf[i] - y),abs(xf[i] - x));
+			if ((xf[i]-x)>0 and (yf[i]-y)>=0) DesiredAng=Ang; 
+				else if ((xf[i]-x)<0 and (yf[i]-y)>=0) DesiredAng=Pi-Ang;
+					else if ((xf[i]-x)<0 and (yf[i]-y)<0) DesiredAng=Pi+Ang;
+						else if ((xf[i]-x)>0 and (yf[i]-y)<0) DesiredAng=2*Pi-Ang;
+	
+			}		
+	cout<<"Desired Angle: "<<DesiredAng<<endl;	
+	//compute angle error
+	geometry_msgs::Quaternion Orient = tf::createQuaternionMsgFromYaw(DesiredAng);	
+	double w = odom->pose.pose.orientation.w;
+	double z = odom->pose.pose.orientation.z;
+	double dw = Orient.w;
+	double dz = Orient.z;
+	cout<<"Ang: "<<2*acos(w)<<endl;		//Current yaw angle	
+		
+	if (z < 0) w = (-1)*w;
+	if (dz < 0) dw = (-1)*dw;
+	
+	
+	cout<<"dw: "<<dw<<endl;			//Desired quaternion w - value
+	cout<<"w: "<<w<<endl;			//Current quaternion w - value
+	
+	double ErrorAng;
+	ErrorAng = dw - w;
+	cout<<"ErrorAng: "<<ErrorAng<<endl;	//angular error
+	//Controller 
+
+	Rttn=-3*ErrorAng;
+
+	if(sqrt(pow(ErrorAng,2)) < (Precision * 1.0e-2))
+		{
+		ErrorAng=0;
+		Rttn = 0;
+		Go = 2;
+		}
+			 
+}	
+if (Go == 2) {
+		double ErrorDist;
+		//if (pow((xf[i]-x),2)>Precision or pow((yf[i]-y),2)>Precision) ErrorDist=sqrt(pow((xf[i]+yf[i]),2)) - sqrt(pow((x+y),2))
+		ErrorDist=sqrt(pow((xf[i]+yf[i]),2)) - sqrt(pow((x+y),2));
+		if (ErrorDist<0) ErrorDist=(-1)*ErrorDist; 
+		cout<<"dx: "<<(xf[i]-x)<<endl;	//X error
+		cout<<"dy: "<<(yf[i]-y)<<endl;	//Y error
+		cout<<"ErrorDist: "<<ErrorDist<<endl;	//distance error
+
+		Spd = 2*ErrorDist;
+		if (sqrt(pow(ErrorDist,2)) < (Precision)) 
+			{
+			ErrorDist=0;
+			Spd=0;
+			Go=1;
+			i++;
+			cout<<"Path Length"<<PathLength<<endl;
+			if (i>=PathLength/2) 
+				{
+				Go = 0; 
+				Spd=0;
+				}
+			}
+	}	
+		cout<<"xf: "<<xf[i]<<" i: "<<i<<endl;		//x position
+		cout<<"yf: "<<yf[i]<<" i: "<<i<<endl;		//y position
+
+}
+
+
+int main(int argc, char** argv){
+	
+	ROS_INFO("This node gives directions according to robot position.");
+	
+	ifstream file;
+	string temp;
+	char * line;
+	char * holder = 0;
+	double point = 0;
+	double Path[256];
+	PathLength = 0;
+
+	file.open("/home/roman/Downloads/hw1/src/Paths2.txt", ifstream::in);
+	 while (!file.eof()) { //while you haven't hit the end of the file
+                getline(file, temp); //get a line
+                line = new char [temp.size()+1];
+                strcpy(line, temp.c_str());
+                holder = strtok (line," ,"); //extract the first "number" in the line
+                while (holder != NULL)
+                {
+                        point = atof(holder); //change the char number to a double
+                        Path[PathLength] = point; //place it in the array
+                        PathLength++;
+                        holder = strtok (NULL, " ,"); // get the next char number
+                }
+
+	}
+	int j=0;
+	for (int i=0; i<PathLength; i+=2){
+		//cout<<"Path: "<<Path[i]<<endl;
+		xf[j]=Path[i];
+		yf[j]=Path[i+1];
+		j++;
+		}
+	for (int i=0; i<PathLength/2; i++){
+		cout<<"xf: "<<xf[i]<<" i: "<<i<<endl;
+		cout<<"yf: "<<yf[i]<<" i: "<<i<<endl;
+		}
+	ros::init(argc,argv,"goto");
+	ros::NodeHandle nh("/");
+	//Get current position	
+	ros::Subscriber sub = nh.subscribe("/odom", 1, position);
+	
+
+	//Motion
+	
+	
+	
+	ros::Publisher velout = nh.advertise<geometry_msgs::Twist>("/cmd_vel",5);
+	
+	ros::Rate Loop_rate(10);
+	while(ros::ok()){
+		geometry_msgs::Twist msg;
+		msg.linear.x=Spd;
+		msg.angular.z=Rttn;
+		ros::Duration(0.1).sleep();
+		velout.publish(msg);
+		ros::spinOnce();
+	}
+
+	ros::spin();
+	return 0;
+}

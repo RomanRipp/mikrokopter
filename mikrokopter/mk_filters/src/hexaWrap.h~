@@ -1,0 +1,53 @@
+#ifndef HEXAWRAP_H
+#define HEXAWRAP_H
+
+#include <ros/ros.h>
+#include <std_msgs/Int8.h>
+#include <mk_msgs/MKCommands.h>
+#include <iostream>
+#include <fstream>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <termios.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+#define RXD_BUFFER_LENGTH 300
+#define TXD_BUFFER_LENGTH 300
+
+void openSerial (char *portname, int speed);
+int receiveData ();
+void encode(unsigned char cmd,int addr, unsigned char* data, unsigned char dataLen);
+void decode(int receivedBytes);
+void sendCommand();
+void AddCRC(int DataBufferLength);
+speed_t getBaud(int speed);
+void publish();
+int validSpeed(char*);
+int rescale(int b1, int b2);
+
+int fd;
+std::string serialPortName;
+int serialPortSpeed;
+unsigned char g_rxd_buffer[RXD_BUFFER_LENGTH];
+unsigned char g_pRxData;
+unsigned char g_txd_buffer[TXD_BUFFER_LENGTH];
+unsigned char g_RxDataLen;
+
+struct ExternControl_t
+{
+	uint8_t Digital[2];
+	uint8_t RemoteButtons;
+        int8_t  Pitch;
+        int8_t  Roll;
+        int8_t  Yaw;
+        uint8_t  Throttle;
+        int8_t  Height;
+        uint8_t free;
+        uint8_t Frame;
+        uint8_t Config;
+
+}ExternControlData;
+#endif

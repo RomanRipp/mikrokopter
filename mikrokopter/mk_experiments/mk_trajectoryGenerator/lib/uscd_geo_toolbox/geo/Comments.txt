@@ -1,0 +1,6 @@
+Projections and geoscientific functions
+  
+Projections of spherical/geographical coordinates,
+calculations of spherical distances by GEODIST,
+of magnetic deviation on earth with GEOMAG and
+the cycle of the sun by SUNCYCLE, SUNZENIT, SUNCOVER.

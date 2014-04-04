@@ -1,0 +1,75 @@
+#include <ros/ros.h>
+#include <tf/transform_broadcaster.h>
+#include <sensor_msgs/LaserScan.h>
+#include <std_msgs/Int16.h>
+#include <iostream>
+#include <math.h>
+
+float omega;
+float vel;
+float error;
+float kp;// = 3;
+float kd;// = 1;	
+float ki;// = 0;
+	
+
+void distance (const sensor_msgs::LaserScan &scan)
+{
+	int min = 0;
+	for(int i = 1; i < 45; i++){
+		if(scan.ranges[i] < scan.ranges[min]){
+			min = i;
+		}
+	}
+	//if(scan.ranges[0] > scan.ranges[89]){
+	//	min = 89;
+	//}
+
+	float prevError = error;
+	error = 1 - scan.ranges[min];
+	float errorSum = errorSum+error;
+	vel =.5 * abs(error);
+
+	omega = (kp * error) + (kd * (error - prevError)) + ki*(errorSum);
+
+	std::cout<<"Distance: "<<scan.ranges[min]<<std::endl;	
+	std::cout<<"min: "<<min<<std::endl;
+		
+	std::cout<<"error: "<<error<<std::endl;	
+	std::cout<<"error - prevError: "<<error - prevError<<std::endl;	
+}
+
+int main(int argc, char** argv){
+	
+	ROS_INFO("This node gives directions according to robot position.");
+
+	ros::init(argc,argv,"Follow");
+	ros::NodeHandle nh("/");
+	//Get current position	
+	ros::Subscriber Laser = nh.subscribe("/base_scan", 1, distance);	
+	std::cout<<"Kp: "<<std::endl;
+	std::cin>>kp;
+	std::cout<<"Kd: "<<std::endl;
+	std::cin>>kd;
+	std::cout<<"Ki: "<<std::endl;
+	std::cin>>ki;
+
+	//Motion
+	
+	
+	
+	ros::Publisher velout = nh.advertise<geometry_msgs::Twist>("/cmd_vel",5);
+	
+	ros::Rate Loop_rate(10);
+	while(ros::ok()){
+		geometry_msgs::Twist msg;
+		msg.linear.x=vel;
+		msg.angular.z=omega;
+		ros::Duration(0.1).sleep();
+		velout.publish(msg);
+		ros::spinOnce();
+	}
+
+	ros::spin();
+	return 0;
+}

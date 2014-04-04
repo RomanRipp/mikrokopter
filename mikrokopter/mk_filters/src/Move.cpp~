@@ -1,0 +1,42 @@
+#include <ros/ros.h>
+#include <tf/transform_broadcaster.h>
+#include <nav_msgs/Odometry.h>
+#include <std_msgs/Int16.h>
+#include <geometry_msgs/Twist.h>
+#include <iostream>
+
+using namespace nav_msgs;
+
+float X;
+
+
+void SetM (const std_msgs::Int16 &M)
+{
+	std::cout << M << std::endl;
+	if (M.data == 0) X=1.0;
+	if (M.data == 1) X=-1.0;
+}
+
+int main (int argc, char** argv){
+
+	ROS_INFO("This node receives directions and turns them into motion.");	
+	
+	ros::init(argc,argv,"Move");
+	ros::NodeHandle nh("/");
+	ros::Subscriber sub = nh.subscribe("MoveTo", 1, SetM);	
+	
+
+	ros::Publisher velout = nh.advertise<geometry_msgs::Twist>("/cmd_vel",5);
+	
+	ros::Rate Loop_rate(10);
+	while(ros::ok()){
+		geometry_msgs::Twist msg;
+		msg.linear.x=X;
+		msg.angular.z=1.0;
+		ros::Duration(0.1).sleep();
+		velout.publish(msg);
+		ros::spinOnce();
+	}
+	ros::spin();
+	return 0;
+}

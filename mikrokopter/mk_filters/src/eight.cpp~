@@ -1,0 +1,48 @@
+#include <ros/ros.h>
+#include <geometry_msgs/Twist.h>
+
+int main(int argc, char** argv){
+
+	// required to access ros. If this gives an error, make sure you are running
+	// roscore on your machine.
+	ros::init(argc,argv,"dumbot");
+
+	//advertise the topic we wish to publish. Roscore will connect us to the
+	//other processes that wish to read from this typic
+	ros::NodeHandle nh("/");
+	ros::Publisher velout = nh.advertise<geometry_msgs::Twist>("/cmd_vel",5);
+
+	//A helpful way to print debugging information
+	ROS_INFO("Up and running. Run Stage to simulate the robot and RVIZ to see the sensor data.");
+	
+	int i=0;
+	while(ros::ok()){
+		
+		
+		//New outgoing message.
+		geometry_msgs::Twist msg;
+						
+		/** here I set the velocities. A figure 8 is basically two circles! **/
+		i++;
+		msg.linear.x=1.0;
+		//Circle 1
+		if (i=<62){
+		msg.angular.z=1.0;
+		}
+		//Circle 2
+		else{
+		msg.angular.z=-1.0;
+		}
+		//Reset
+		if(i>=124) i=0;
+
+		//Wait a bit, but not too long or the robot will stop moving.
+		ros::Duration(0.1).sleep();
+		
+		//send the commanded velocities
+
+		velout.publish(msg);
+	}
+	
+	return 0;
+}

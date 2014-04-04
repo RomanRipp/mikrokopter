@@ -1,0 +1,47 @@
+netcdf ctd {
+dimensions:
+	N_DATE_TIME = 19 ;
+	mN_PROF = 1 ;
+	mN_ZLEV = 1 ;
+variables:
+	char DATE(mN_PROF, N_DATE_TIME) ;
+		DATE:long_name = "Date time of each profile" ;
+		DATE:Conventions = "DD/MM/YYYY HH24:MI:SS" ;
+		DATE:_FillValue = " " ;
+	double LATITUDE(mN_PROF) ;
+		LATITUDE:long_name = "Latitude of each profile" ;
+		LATITUDE:units = "degrees_north" ;
+		LATITUDE:missing_value = -9999. ;
+		LATITUDE:valid_min = -90. ;
+		LATITUDE:valid_max = 90. ;
+	double LONGITUDE(mN_PROF) ;
+		LONGITUDE:long_name = "Longitude of each profile" ;
+		LONGITUDE:units = "degrees_east" ;
+		LONGITUDE:missing_value = -9999. ;
+		LONGITUDE:valid_min = -180. ;
+		LONGITUDE:valid_max = 180. ;
+	float BOTTOM_DEPTH(mN_PROF) ;
+		BOTTOM_DEPTH:long_name = "Bottom depth of each profile" ;
+		BOTTOM_DEPTH:units = "meters" ;
+		BOTTOM_DEPTH:missing_value = -9999.f ;
+		BOTTOM_DEPTH:valid_min = 0. ;
+		BOTTOM_DEPTH:valid_max = 15000. ;
+	float PRES(mN_PROF, mN_ZLEV) ;
+		PRES:long_name = "Pressure" ;
+		PRES:units = "decibar = 1000 Pa" ;
+		PRES:missing_value = 9999.f ;
+		PRES:valid_min = 0. ;
+		PRES:valid_max = 15000. ;
+	float TEMP(mN_PROF, mN_ZLEV) ;
+		TEMP:long_name = "Temperature (in situ)" ;
+		TEMP:units = "degree Celsius" ;
+		TEMP:missing_value = 9999.f ;
+		TEMP:valid_min = -3. ;
+		TEMP:valid_max = 40. ;
+	float PSAL(mN_PROF, mN_ZLEV) ;
+		PSAL:long_name = "Practical Salinity, sal78" ;
+		PSAL:units = "PSU" ;
+		PSAL:missing_value = 9999.f ;
+		PSAL:valid_min = 0. ;
+		PSAL:valid_max = 60. ;
+}

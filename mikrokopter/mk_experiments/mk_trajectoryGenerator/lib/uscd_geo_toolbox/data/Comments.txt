@@ -1,0 +1,8 @@
+Access to various DataFormats
+
+- read/write binned GMT-Lines (Shore, River, Border) in NetCDF-Format
+- read/write data in STL-Format
+- read SBE-Ascii-DataFiles
+- read GNS-NameFiles from GeoNET-NameServer
+- read GEBCO-Ascii-FIles
+ 

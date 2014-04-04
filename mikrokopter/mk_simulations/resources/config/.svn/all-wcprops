@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/kyb-robotics/!svn/ver/31/SwarmSimX/trunk/stacks/ssx_projects/massive_quadrotors/resources/config
+END
+ogre.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/kyb-robotics/!svn/ver/31/SwarmSimX/trunk/stacks/ssx_projects/massive_quadrotors/resources/config/ogre.cfg
+END
+Config_massive_robots.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/kyb-robotics/!svn/ver/31/SwarmSimX/trunk/stacks/ssx_projects/massive_quadrotors/resources/config/Config_massive_robots.xml
+END

@@ -1,0 +1,520 @@
+    The Julian and Gregorian Calendars by Peter Meyer
+
+    URL: http://www.hermetic.ch/cal_stud/cal_art.html
+
+       1. The Julian Calendar
+       2. The Gregorian Reform
+       3. Adoption of the Gregorian Calendar
+       4. Astronomical Year Numbering
+       5. The Proleptic Julian and Gregorian Calendars
+       6. Variation in the Tropical Year
+       7. Accuracy of the Gregorian and Orthodox Calendars
+       8. True Length of the Tropical Year
+
+    ------------------------------------------------------------------------
+
+          1. The Julian Calendar
+
+    For many European institutions, we can thank the Romans (for good or
+    for bad, though they too had their predecessors in the Greeks,
+    Egyptians and Babylonians). So with the solar calendar currently in
+    widespread use.
+
+    Originally the Romans numbered years ab urbe condita, that is, "from
+    the founding of the city" (of Rome, where much of the character of
+    the modern world had its beginnings). Had this old calendar remained
+    in use, 1996-01-14 would have been New Year's Day in the year 2749
+    a.u.c. (In this article dates are often given in IS0 8601 format
+    <formats.htm>.)
+
+    Following his conquest of Egypt in 48 B.C. Julius Caesar consulted
+    the Alexandrian astronomer Sosigenes about calendar reform (since
+    the a.u.c. calendar then used by the Romans was completely
+    inadequate to the needs of the emerging empire, which Caesar was
+    poised to command, briefly as it turned out). The calendar which
+    Julius Caesar adopted in the year 709 a.u.c. (what we now call
+    46 B.C.) was identical to the Alexandrian Aristarchus' calendar of
+    239 B.C., and consisted of a solar year of twelve months and of 365
+    days with an extra day every fourth year. It is unclear as to where
+    or how Aristarchus arrived at this calendar, but one may speculate
+    that Babylonian science was involved.
+
+    As we can read in the excellent article, "The Western Calendar and
+    Calendar Reforms" in the Encyclopedia Brittanica, Sosigenes decided
+    that the year known in modern times as 46 B.C. should have two
+    intercalations. The first was the customary intercalation of 23 days
+    following February 23, the second, "to bring the calendar in step
+    with the equinoxes, was achieved by inserting two additional months
+    between the end of November and the beginning of December. This
+    insertion amounted to an addition of 67 days, making a year of no
+    less than 445 days and causing the beginning of March, 45 B.C. in
+    the Roman republican calendar, to fall on what is still called
+    January 1 of the Julian Calendar."
+
+    According to a contributor <tobin.html> to the CALNDR-L
+    <http://www.personal.ecu.edu/MCCARTYR/calndr-l.html> mailing list,
+    Julius Caesar wanted to start the year on the Spring Equinox or the
+    Winter Solstice, but the Senate, which traditionally took office on
+    January 1st, the start of the Roman civil calendar year, wanted to
+    keep January 1st as the start of the year, and Caesar yielded in a
+    political compromise.
+
+    The Roman date-keepers initially misunderstood Caesar's instructions
+    concerning the new calendar (according to Macrobius), and
+    erroneously held every third year, rather than every fourth year, to
+    be a leap year. There is some dispute as to exactly which years from
+    43 B.C. through to 8 A.D. were actually leap years, but a
+    reconstruction which is consistent with the available evidence is
+    that every third year following 43 B.C. (i.e. 40 B.C., 37 B.C.,
+    etc.) was a leap year, until 10 B.C., after which, according to this
+    hypothesis, Augustus Caesar (Julius Caesar's successor) suspended
+    leap years, reinstating them with the leap year of 4 A.D.
+
+    Another source of uncertainty regarding exact dating of days at this
+    time derives from changes made by Augustus to the lengths of the
+    months. According to some accounts, originally the month of February
+    had 29 days and in leap years 30 days (unlike 28 and 29 now). It
+    lost a day because at some point the fifth and six months of the old
+    Roman calendar were renamed as Julius and Augustus respectively, in
+    honor of their eponyms, and the number of days in August, previously
+    30, now became 31 (the same as the number of days in July), so that
+    Augustus Caesar would not be regarded as inferior to Julius Caesar.
+    The extra day needed for August was taken from the end of February.
+    However there is still no certainty regarding these matters, so all
+    dates prior to A.D. 4, when the Julian Calendar finally stabilized,
+    are uncertain.
+
+    Subsequently the Julian Calendar became widespread as a result of
+    its use throughout the Roman Empire and later by various Christian
+    churches, which inherited many of the institutions of the Roman world.
+
+    The system of numbering years A.D. (for "Anno Domini") was
+    instituted in about the year 527 A.D. by the Roman abbot Dionysius
+    Exiguus <http://www.newadvent.org/cathen/05010b.htm>, who reckoned
+    that the Incarnation had occurred on March 25 in the year 754
+    a.u.c., with the birth of Jesus occurring nine months later. Thus
+    the year 754 a.u.c. was designated by him as the year 1 A.D. It is
+    generally thought that his estimate of the time of this event was
+    off by a few years (and there is even uncertainty as to whether he
+    identified 1 A.D. with 754 a.u.c. or 753 a.u.c.).
+
+    The question has been raised (by Sean Oberle) as to whether the
+    first Christian millennium should be counted from 1 A.D. or from the
+    year preceding it. According to Dionysius the Incarnation occurred
+    on March 25th of the year preceding 1 A.D. (with the birth of Jesus
+    occurring nine months later on December 25th), so it is reasonable
+    to regard that year, rather than 1 A.D. as the first year of the
+    Christian Era. In that case 1 A.D. is the second year, and 999 A.D.
+    is the 1000th year, of the first Christian millennium, implying that
+    1999 A.D. is the final year of the second Christian millennium and
+    2000 A.D. the first year of the third.
+
+    ------------------------------------------------------------------------
+
+          2. The Gregorian Reform
+
+    The average length of a year in the Julian Calendar is 365.25 days
+    (one additional day being added every four years). This is
+    significantly different from the "real" length of the solar year.
+    However, there is uncertainty among astronomers as to what the
+    length of the solar year really is (see Simon Cassidy's Error in
+    Statement of Tropical Year <cassidy/err_trop.htm>). The main
+    competing values seem to be the "mean tropical year" of 365.2422
+    days ("mean solar days") and the "vernal equinox year" of 365.2424
+    days. The difference of the length of the Julian calendar year from
+    the length of the real solar year is thus 0.0078 days (11.23
+    minutes) in the former case and 0.0076 days (10.94 minutes) in the
+    latter case.
+
+    <http://www.personal.ecu.edu/MCCARTYR/inter-grav.html> Whatever,
+    this error accumulates so that after about 131 years the calendar is
+    out of sync with the equinoxes and solstices by one day. Thus as the
+    centuries passed the Julian Calendar became increasingly inaccurate
+    with respect to the seasons. This was especially troubling to the
+    Roman Catholic Church because it affected the determination of the
+    date of Easter, which, by the 16th Century, was well on the way to
+    slipping into Summer.
+
+    Pope Paul III recruited several astronomers, principally the Jesuit
+    Christopher Clavius (1537-1612), to come up with a solution. They
+    built upon calendar reform proposals by the astronomer and physician
+    Luigi Lilio (d. 1576). When Pope Gregory XIII was elected he found
+    various proposals for calendar reform before him, and decided in
+    favor of that of Clavius. On 1582-02-24 he issued a papal bull,
+    Inter Gravissimas,
+    <http://www.personal.ecu.edu/MCCARTYR/inter-grav.html> establishing
+    what is now called the Gregorian Calendar reform. (The full text may
+    be read in both the Latin original and a French translation
+    <http://hermes.ulaval.ca/~sitrau/calgreg/bulle.html> by Rudolphe
+    Audette, and in an English translation
+    <http://www.bluewaterarts.com/calendar/InterGravissimas.htm>,
+    recently done by Bill Spencer.)
+
+    The Gregorian reform consisted of the following:
+
+        * Ten days were omitted from the calendar, and it was decreed
+          that the day following (Thursday) October 4, 1582 (which is
+          October 5, 1582, in the old calendar) would thenceforth be
+          known as (Friday) October 15, 1582.
+
+        * The rule for leap years was changed. In the Julian Calendar a
+          year is a leap year if it is divisible by 4. In the Gregorian
+          Calendar a year is a leap year if either (i) it is divisible
+          by 4 but not by 100 or (ii) it is divisible by 400. In other
+          words, a year which is divisible by 4 is a leap year unless it
+          is divisible by 100 but not by 400 (in which case it is not a
+          leap year). Thus the years 1600 and 2000 are leap years, but
+          1700, 1800, 1900 and 2100 are not.
+
+        * New rules for the determination of the date of Easter were
+          adopted.
+
+        * The position of the extra day in a leap year was moved from
+          the day before February 25th to the day following February 28th. 
+
+    According to some, the term "leap year" derives from the fact that
+    the day of the week on which certain festivals were held normally
+    advanced by one day (since 365 = 7*52 + 1), but in years with an
+    extra day the festivals would "leap" to the weekday following that.
+    However, it may be derived from an old Norwegian word "hlaupâr"
+    which entered the English language at the time of the Viking
+    invasions (8th - 10th Centuries).
+
+    In his excellent book Marking Time Duncan Steel remarks (p.165) that
+    it is often claimed that part of the Gregorian reform consisted in
+    setting the first day of the year (New Year's Day) to January 1st,
+    but that in fact the papal bull made no reference to the date of New
+    Year's Day. January 1st was already New Year's Day in many European
+    countries. The ecclesiastical New Year coincided with Christmas Day
+    until it was changed to January 1st by Pope Pius X in 1910 (coming
+    into effect in 1911).
+
+    It may be noted that there was no necessity for ten days, rather
+    than, say, twelve days to have been omitted from the calendar. In
+    fact, the calendar could have been reformed without omitting any
+    days at all, since only the new rule for leap years is required to
+    keep the calendar synchronized with the vernal equinoxes. The number
+    of days omitted determines the date for the Spring equinox, an
+    omission of ten days resulting in a date usually of March 20th.
+
+    The vernal equinox year during the last 2000 years is 365.2424 days.
+    The average length of the Julian year (365.25 days) differs from
+    this value by 0.0076 days. So from the year 1 to the year 1582 the
+    calendar drifted off the vernal equinox year by 1581*0.0076 = 12.02
+    days. Why didn't Pope Gregory remove twelve days, instead of just
+    ten? It has to do with the First Council of Nicea, which was held in
+    Nicea (now Iznik, Turkey) in the year 325 CE. One of the matters
+    settled by this council was the method for determining the date of
+    Easter (which should occur around the vernal equinox), so as to make
+    it independent of the Jewish Calendar. From the year 325 to the year
+    1582 the calendar diverged (from the vernal equinox) by 1257*0.0076
+    = 9.55 days, so ten days were removed in an attempt to restore the
+    date of the vernal equinox to (about) the same date of the year at
+    which it had occurred at the time of the Council of Nicea.
+
+    The matter is not this simple, however, because the date of the
+    vernal equinox in the calendar of the Roman Catholic Church as
+    established by the Council of Nicea (in 325 A.D.) is March 21, but
+    the effect of removing ten days in 1582 had the result that the
+    vernal equinox occurs in the Gregorian Calendar mostly on March 20,
+    less often on March 21, sometimes on March 19 and sometimes even on
+    March 22 according to local time in the Far East. So should Pope
+    Gregory have omitted nine days? Or perhaps eleven? Presumably Pope
+    Gregory's astronomical advisors considered all three possibilities.
+    Some say that the choice of ten was a compromise, supported by the
+    fact that the omission of ten days made it easier to correct old
+    calendars simply by the insertion of an "X" (the Latin numeral for
+    "10").
+
+    In fact a non-Gregorian calendar reform (involving a 33-year cycle
+    <cassidy/33yr-cal.htm> and a prime meridian running through Virginia
+    <dst01.htm>) would have stabilized the vernal equinox at March 21
+    for the whole world, but this possibility (assuming it was
+    considered by the Pope) was rejected, presumably on political grounds.
+
+    ------------------------------------------------------------------------
+
+          3. Adoption of the Gregorian Calendar
+
+    The Gregorian Calendar was adopted immediately upon the promulgation
+    of Pope Gregory's decree in the Catholic countries of Italy, Spain,
+    Portugal and Poland, and shortly thereafter in France and
+    Luxembourg. During the next year or two most Catholic regions of
+    Germany, Belgium, Switzerland and the Netherlands came on board.
+    Hungary followed in 1587. The rest of the Netherlands, Denmark,
+    Germany and Switzerland made the change during 1699 to 1701. By the
+    time the British were ready to go along with the rest of Europe, the
+    old calendar had drifted off by one more day, requiring a correction
+    of eleven days, rather than ten. The Gregorian Calendar was adopted
+    in Britain (and in the British colonies) in 1752, with (Wednesday)
+    September 2, 1752, being followed immediately by (Thursday)
+    September 14, 1752.
+
+    In many countries the Julian Calendar was used by the general
+    population long after the official introduction of the Gregorian
+    Calendar. Thus events were recorded in the 16th to 18th Centuries
+    with various dates, depending on which calendar was used. Dates
+    recorded in the Julian Calendar were marked "O.S." for "Old Style",
+    and those in the Gregorian Calendar were marked "N.S." for "New Style".
+
+    To complicate matters further New Year's Day, the first day of the
+    new year, was celebrated in different countries, and sometimes by
+    different groups of people within the same country, on either
+    January 1, March 1, March 25 or December 25. January 1 seems to have
+    been the usual date but there was no standard observed. With the
+    introduction of the Gregorian Calendar in Britain and the colonies
+    New Year's Day was generally observed on January 1. Previously in
+    the colonies it was common for March 24 of one year to be followed
+    by March 25 of the next year. This explains why, with the
+    calendrical reform and the shift of New Year's Day from March 25
+    back to January 1, the year of George Washington's birth changed
+    from 1731 to 1732. In the Julian Calendar his birthdate is
+    1731-02-11 but in the Gregorian Calendar it is 1732-02-22.
+
+    Sweden adopted the Gregorian Calendar in 1753, Japan in 1873, Egypt
+    in 1875, Eastern Europe during 1912 to 1919 and Turkey in 1927.
+    Following the Bolshevik Revolution in Russia it was decreed that
+    thirteen days would be omitted from the calendar, the day following
+    January 31, 1918, O.S. becoming February 14, 1918, N.S. (Further
+    information can be found in The Perpetual Calendar
+    <http://www.norbyhus.dk/calendar.html> and here
+    <http://www.tondering.dk/claus/cal/node3.html#SECTION00324000000000000000>.)
+
+    In 1923 the Eastern Orthodox Churches adopted a modified form of the
+    Gregorian Calendar in an attempt to render the calendar more
+    accurate (see below). October 1, 1923, in the Julian Calendar became
+    October 14, 1923, in the Eastern Orthodox calendar. The date of
+    Easter is determined by reference to modern lunar astronomy (in
+    contrast to the more approximate lunar model of the Gregorian system).
+
+    The Gregorian Calendar is the calendar which is currently in use in
+    all Western and Westernized countries, and Dionysius Exiguus's
+    system of numbering years A.D. has endured to the present time.
+
+    The abbreviation A.D. is short for "Anni Domini Nostri Jesu
+    Christi", i.e., "in the year of Our Lord Jesus Christ". Since
+    Muslims, Jews, etc., may not be entirely comfortable with this, the
+    designation "A.D." is now sometimes replaced by the more neutral
+    C.E. (for "Christian Era"), and instead of B.C. ("Before Christ")
+    B.C.E. (for "Before Christian Era") is sometimes used.
+
+    CE is also an abbreviation of "Common Era". The Common Era Calendar
+    is the same as the Gregorian Calendar except that instead of
+    numbering years BC/AD the astronomical system of year numbering is
+    used (this system is explained in the next section). In this article
+    (and elsewhere on this website) dates designated "CE" are almost
+    always dates in this Common Era Calendar. Note that "BCE" is not
+    used with dates in the Common Era Calendar. The date 2 BCE, meaning
+    the year 2 "before Christian Era", a.k.a. 2 BC, is the same as the
+    year -1 CE.
+
+    ------------------------------------------------------------------------
+
+          4. Astronomical Year Numbering
+
+    Astronomers designate years prior to 1 A.D. by means of zero and
+    negative numbers, according to the sequence of numbers ..., -2, -1,
+    0, 1, 2, .... Between the year 1 and the year -1 there occurs the
+    year 0. Thus astronomers adopt the following convention:
+
+    1 A.D. = 1 C.E. =  year 1
+    1 B.C. = 1 B.C.E. = year 0
+    2 B.C. = 2 B.C.E. = year -1 and so on
+
+    More generally, a year popularly designated n B.C. or n B.C.E. is
+    designated by astronomers as the year -(n-1).
+
+    The rules for leap years work for years prior to 1 C.E. only if
+    those years are expressed according to the astronomical system, not
+    if expressed as years B.C.E.  4 C.E. is a leap year in both
+    calendars, 1 B.C.E. = astronomical year 0, 5 B.C.E. = year -4,
+    9 B.C.E. = year -8, and so on, are all leap years. 101 B.C.E. =
+    year -100 is a leap year in the (proleptic <#Proleptic>) Julian
+    Calendar but not in the (proleptic) Gregorian Calendar. These
+    statements, however, are only theoretically true, because (as noted
+    above) prior to 4 C.E. the leap years were not observed correctly by
+    the Roman calendrical authorities.
+
+    As noted above, the Common Era Calendar is the same as the Gregorian
+    Calendar except that instead of numbering years BC/AD the
+    astronomical system of year numbering is used.
+
+    The choice of which system of numbering years to use is relevant to
+    the question: When Does the New Millennium Begin? <newmill.htm> as
+    can be seen from the following:
+
+Gregorian   Religiously   Common Era
+Calendar     Neutral       Calendar
+3 BC         3 BCE          -2 CE
+2 BC         2 BCE          -1 CE
+                      CE millennium begins 0-01-01 CE
+1 BC         1 BCE           0 CE
+Gregorian millennium usually taken to begin 1-1-1 AD
+1 AD         1 CE            1 CE
+2 AD         2 CE            2 CE
+...          ...            ...
+1998 AD      1998 CE        1998 CE
+1999 AD      1999 CE        1999 CE
+                      CE millennium ends   1999-12-31 CE
+                      CE millennium begins 2000-01-01 CE
+2000 AD      2000 CE        2000 CE
+Gregorian millennium usually taken to end   2000-12-31 AD                        
+Gregorian millennium usually taken to begin 2001-1-1 AD
+2001 AD      2001 CE        2001 CE
+
+    January 1st, 1 AD is usually taken to be the start of the first
+    Christian millennium, but a case could be made for January 1st, 1 BC
+    (see the comment above concerning the incarnation <#Dionysius>),
+    which would imply that the third Christian millennium began on
+    January 1st, 2000 AD.
+
+    ------------------------------------------------------------------------
+
+          5. The Proleptic Julian and Gregorian Calendars
+
+    Every date recorded in history prior to October 15, 1582
+    (Gregorian), such as the coronation of Charlemagne as Holy Roman
+    Emperor on Christmas day in the year 800, is a date in the Julian
+    Calendar, since on those dates the Gregorian Calendar had not yet
+    been invented.
+
+    We can, however, identify particular days prior to October 15, 1582
+    (Gregorian), by means of dates in the Gregorian Calendar simply by
+    projecting the Gregorian dating system back beyond the time of its
+    implementation. A calendar obtained by extension earlier in time
+    than its invention or implementation is called the "proleptic"
+    version of the calendar, and thus we obtain the proleptic Gregorian
+    Calendar. The Julian Calendar also can be extended backward as the
+    proleptic Julian Calendar.
+
+    For example, even though the Gregorian Calendar was implemented on
+    October 15, 1582 (Gregorian) we can still say that the date of the
+    day one year before was October 15, 1581 (Gregorian), even though
+    people alive on that day would have said that the date was October
+    5, 1581 (the Julian date at that time).
+
+    Similarly, dates after October 15, 1582 (Gregorian) have equivalent,
+    but different, dates in the Julian Calendar. For example, the first
+    version of this article was completed on 1992-10-10 in the Gregorian
+    Calendar, but it is also true to say that it was completed on
+    1992-09-28 in the Julian Calendar. As another example, the date of
+    the winter solstice in the year 2012 is 2012-12-21 (Gregorian),
+    which is 2012-12-08 (Julian).
+
+    Thus any day in the history of the Earth, either in the past or in
+    the future, can be specified as a date in either of these two
+    calendrical systems. The dates will generally be different; in fact
+    they will be the same only for dates from March 1st, 200, to
+    February 28, 300. The dates in neither calendar will coincide with
+    the seasons in the distant past or distant future, but that does not
+    affect the validity of these calendars as systems for uniquely
+    identifying particular days.
+
+    (See also a note I sent to the CALNDR-L mailing list Re: Proleptic
+    calendar conventions <prolept.htm>.)
+
+    ------------------------------------------------------------------------
+
+          6. Variation in the Tropical Year
+
+    The tropical year (a.k.a. the mean solar year) corresponds to the
+    cycle of the seasons. The exact definition of this concept is
+    currently a matter of debate among some astronomers (see Simon
+    Cassidy's Error in Statement of Tropical Year
+    <cassidy/err_trop.htm>). All agree, however, that due to the
+    gravitational dynamics of the Sun-Earth-Moon system the length of
+    the tropical year (however defined) is changing slowly. The length
+    of the tropical year on 2000-01-01 is calculated by some astronomers
+    to be 365.24218967 days, but at this level of precision the value
+    depends on the definition of the concept. The value changes
+    significantly with the millennia, however, as follows (according to
+    a formula in common use among astronomers):
+
+  Year           Length of tropical year in days
+ -5000           365.24253
+ -4000           365.24250
+ -3000           365.24246
+ -2000           365.24242
+ -1000           365.24237
+     0           365.24231
+  1000           365.24225
+  2000           365.24219
+  3000           365.24213
+  4000           365.24207
+  5000           365.24201
+
+    Thus the value of the tropical year varies over this 10,000-year
+    timespan by as much as .00052 days (about 45 seconds).
+
+    ------------------------------------------------------------------------
+
+          7. Accuracy of the Gregorian and Orthodox Calendars
+
+    As in any completely rule-based calendar, the Gregorian Calendar is
+    not absolutely accurate. In the Gregorian Calendar the average
+    length of a year is 365.2425 days (since there are 146,097 days in
+    400 calendar years). This is a lot closer to the "real" length of
+    the solar year than is the case with the Julian Calendar. As noted
+    above <#Gregorian_Reform>, the main competing values for the length
+    of the solar year are 365.2422 days (the mean tropical year) and
+    365.2424 days (the vernal equinox year). The difference of the
+    length of the Gregorian calendar year from the length of the real
+    solar year is thus 0.0003 days (25.9 seconds) in the former case and
+    0.0001 days (8.6 seconds) in the latter case. Were the length of the
+    "mean solar year" to be constant this error would accumulate to one
+    day after about 3,336 years (if we use the 365.2422 value) or after
+    about 10,000 years (if we use the 365.2424 value).
+
+    Whereas in the Gregorian Calendar a century year is a leap year only
+    if division of the century number by 4 leaves a remainder of 0, in
+    the Eastern Orthodox system a century year is a leap year only if
+    division of the century number by 9 leaves a remainder of 2 or 6.
+    This implies an average calendar year length in the Orthodox
+    Calendar of 365.24222 days. This is very close to the present mean
+    solar value of 365.24219, and the Eastern Orthodox Calendar is at
+    present significantly more accurate in this respect than the
+    Gregorian. Were the mean solar year to remain constant, the Orthodox
+    Calendar would be off by one day only after about 33,000 years.
+    However over the next few millennia the Orthodox calendar, like the
+    Gregorian, will become increasingly inaccurate with respect to the
+    mean solar year until possibly recovering around 10,000 years from
+    now. However, in terms of the vernal equinox year the Gregorian
+    Calendar is more accurate than the Orthodox and will remain more
+    accurate in the coming millennia.
+
+    ------------------------------------------------------------------------
+
+          8. True Length of the Tropical Year
+
+    The tropical year <cassidy/tropanom.htm> has been defined as "the
+    time it takes the Sun to appear to travel around the sky from a
+    given point of the tropical zodiac back to that same point in the
+    tropical zodiac." As Simon Cassidy has pointed out (Error in
+    Statement of Tropical Year <cassidy/err_trop.htm>) this value
+    depends on where in the Earth's orbit one begins the measurement of
+    one revolution about the Sun. If the point used is the point of the
+    vernal equinox then the value is 365.2424 tropical days (so this is
+    the value of the "vernal-equinox year"). If one wishes an average
+    value that is the mean of the values obtained by using different
+    orbital starting points, then a value of 365.24219 days emerges.
+
+    ------------------------------------------------------------------------
+
+    Those interested in pursuing this question further should consult
+    (in addition to the articles linked in the previous paragraph) the
+    following:
+
+     Royal Greenwich Observatory  	 Information leaflets
+    <http://www.ast.cam.ac.uk/pubinfo/leaflets/> 
+     Royal Greenwich Observatory  	 Information Leaflet No. 48: Leap Years
+    <http://www.ast.cam.ac.uk/pubinfo/leaflets/leapyear/leapyear.html> 
+     L. E. Doggett  	 Calendars
+    <http://astro.nmsu.edu/~lhuber/leaphist.html> 
+     Simon Cassidy  	 Implementing a correct 33-year calendar reform
+    <cassidy/33yr-cal.htm> 
+     Simon Cassidy  	 Re: How long is a year -- EXACTLY?
+    <cassidy/howlong.htm> 
+     Duncan Steel  	 The Non-implemented 33-Year English Protestant
+    Calendar <dst01.htm> 
+
+    ------------------------------------------------------------------------

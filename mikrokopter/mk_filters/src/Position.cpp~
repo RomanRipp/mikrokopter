@@ -1,0 +1,53 @@
+#include <ros/ros.h>
+#include <tf/transform_broadcaster.h>
+#include <nav_msgs/Odometry.h>
+#include <std_msgs/Int16.h>
+#include <iostream>
+
+using namespace nav_msgs;
+
+int ss;
+float Ang = 1.57;
+geometry_msgs::Quaternion Orient = tf::createQuaternionMsgFromYaw(Ang);
+
+void position (const OdometryConstPtr &odom)
+{
+	ROS_INFO("Hi");
+	float X=odom->pose.pose.position.x;
+	float Y=odom->pose.pose.position.y;
+	std::cout<<"X: "<<X<<std::endl;
+	
+	//Define motion dirrection
+	if (Orient.w != odom->pose.pose.orientation.w) ss=1;
+	else ss = 0;  
+}
+
+
+int main(int argc, char** argv){
+	
+	ROS_INFO("This node gives directions according to robot position.");
+
+	ros::init(argc,argv,"Position");
+	ros::NodeHandle nh("/");
+	//Get current position	
+	ros::Subscriber sub = nh.subscribe("/odom", 1, position);	
+
+	
+	//std::cout<<"Ang: "<<Orient.w<<std::endl;
+		
+
+	//Publish topic with motion dirrections
+	ros::Publisher Go_pub = nh.advertise<std_msgs::Int16>("MoveTo",1);
+	ros::Rate Loop_rate(10);
+	while (ros::ok())
+	{ 	
+		std_msgs::Int16 go;
+		go.data = ss;
+		std::cout << go << std::endl;
+		Go_pub.publish(go);
+		ros::spinOnce();
+		Loop_rate.sleep();
+	}
+	ros::spin();
+	return 0;
+}

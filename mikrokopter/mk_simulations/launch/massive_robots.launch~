@@ -1,0 +1,7 @@
+
+<launch>
+	<!-- SSX -->
+	<node name="SwarmSimX" pkg="ssx" type="ssx.sh" args="--conffile $(env HOME)/SwarmSimX/share/SwarmSimX/Config/Config_massive_robots.xml" output="screen">
+	</node>
+
+</launch>

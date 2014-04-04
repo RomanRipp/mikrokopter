@@ -1,0 +1,57 @@
+#include <ros/ros.h>
+#include <tf/transform_broadcaster.h>
+#include <nav_msgs/Odometry.h>
+#include <geometry_msgs/Twist.h>
+#include <iostream>
+
+using namespace nav_msgs;
+
+void velocity(const OdometryConstPtr &odom)
+{
+	ROS_INFO("Hi");
+	std::cout<<"X: "<<odom->pose.pose.position.x<<std::endl;
+}
+
+
+int main(int argc, char** argv){
+
+	// required to access ros. If this gives an error, make sure you are running
+	// roscore on your machine.
+	ros::init(argc,argv,"Motion");
+
+	//advertise the topic we wish to publish. Roscore will connect us to the
+	//other processes that wish to read from this typic
+	ros::NodeHandle nh("/");
+	ros::Publisher velout = nh.advertise<geometry_msgs::Twist>("/cmd_vel",5);
+	
+	
+
+	//A helpful way to print debugging information
+	ROS_INFO("Up and running. Run Stage to simulate the robot and RVIZ to see the sensor data.");
+	
+
+	while(ros::ok()){
+		
+				
+		
+		//New outgoing message.
+		geometry_msgs::Twist msg;
+			
+		/** Here you must set the velocities. **/
+		 
+		msg.linear.x=1.0;
+		msg.angular.z=1.0;
+
+		ros::Subscriber sub = nh.subscribe("/odom", 1, velocity);
+		
+		ros::spin();
+		
+		//Wait a bit, but not too long or the robot will stop moving.
+		ros::Duration(0.1).sleep();
+		
+		//send the commanded velocities
+		velout.publish(msg);
+		//odom_pub.publish(odom);
+	}
+	return 0;
+}
