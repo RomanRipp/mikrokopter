@@ -1,0 +1,20 @@
+<package>
+  <description brief="rendezvous">
+
+     rendezvous
+
+  </description>
+  <author>Roman Ripp</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/rendezvous</url>
+
+	<depend package="roscpp"/>
+	<depend package="mk_msgs"/>
+	<depend package="ugv_msgs"/>
+	<depend package="std_msgs"/>
+	<depend package="EarthCoords">
+
+</package>
+
+

@@ -1,0 +1,16 @@
+/home/loki/Documents/ros_workspace/rendezvous/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir
+/home/loki/Documents/ros_workspace/rendezvous/build/CMakeFiles/ROSBUILD_genmsg_lisp.dir
+/home/loki/Documents/ros_workspace/rendezvous/build/CMakeFiles/ROSBUILD_gensrv_cpp.dir
+/home/loki/Documents/ros_workspace/rendezvous/build/CMakeFiles/ROSBUILD_gensrv_lisp.dir
+/home/loki/Documents/ros_workspace/rendezvous/build/CMakeFiles/clean-test-results.dir
+/home/loki/Documents/ros_workspace/rendezvous/build/CMakeFiles/rendezvous.dir
+/home/loki/Documents/ros_workspace/rendezvous/build/CMakeFiles/rosbuild_precompile.dir
+/home/loki/Documents/ros_workspace/rendezvous/build/CMakeFiles/rosbuild_premsgsrvgen.dir
+/home/loki/Documents/ros_workspace/rendezvous/build/CMakeFiles/rospack_genmsg.dir
+/home/loki/Documents/ros_workspace/rendezvous/build/CMakeFiles/rospack_genmsg_libexe.dir
+/home/loki/Documents/ros_workspace/rendezvous/build/CMakeFiles/rospack_gensrv.dir
+/home/loki/Documents/ros_workspace/rendezvous/build/CMakeFiles/test.dir
+/home/loki/Documents/ros_workspace/rendezvous/build/CMakeFiles/test-future.dir
+/home/loki/Documents/ros_workspace/rendezvous/build/CMakeFiles/test-results.dir
+/home/loki/Documents/ros_workspace/rendezvous/build/CMakeFiles/test-results-run.dir
+/home/loki/Documents/ros_workspace/rendezvous/build/CMakeFiles/tests.dir

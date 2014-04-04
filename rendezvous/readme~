@@ -1,0 +1,7 @@
+randezvous launch : 
+
+UGV simulation: 
+rostopic pub -r 10 /current_waypoint geometry_msgs/Twist '{linear: {x: 44.970969,y: -93.236648,z: 0.0}, angular: {x: 0,y: 0.0,z: 0.0}}'
+
+UAV simulation: 
+rosservice call /rendezvous/point -- 44.970786 -93.236707

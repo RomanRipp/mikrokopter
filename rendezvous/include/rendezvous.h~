@@ -1,0 +1,35 @@
+#ifndef RENDEZVOUS_H
+#define RENDEZVOUS_H
+
+#include <ros/ros.h>
+#include <rendezvous/topicNames.h>
+#include <mk_msgs/GetRendezvousPoint.h>
+
+class Rendezvous {
+
+	public:
+		/**
+		 * Constructor
+		 */
+		Rendezvous();
+
+		/**
+		 * Destructor.
+		 */
+		~Rendezvous();
+
+		/**
+		 * Starts the rendezvous
+		 */
+		void start(void);
+	private:
+	ros::NodeHandle nh;
+	ros::ServiceServer interfaceto_uav;
+	ros::ServiceClient interfaceto_ugv;
+	ros::Publisher commonlat_pub, commonlon_pub;
+	ros::Subscriber currpos_ugv_sub;
+	void setupROS(void);
+	bool getRendezvoiusPoint(mk_msgs::GetRendezvousPoint::Request& req,	
+							mk_msgs::GetRendezvousPoint::Response& res);
+};
+#endif /* RENDEZVOUS_H */

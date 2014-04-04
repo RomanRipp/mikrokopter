@@ -1,0 +1,1 @@
+/usr/bin/c++   -O2 -g     -pthread CMakeFiles/rendezvous.dir/src/rendezvous.o  -o ../bin/rendezvous -rdynamic -L/opt/ros/fuerte/lib -L/home/loki/Documents/ros_workspace/EarthCoords/lib -lroscpp -lrostime -lrosconsole -lroscpp_serialization -lxmlrpcpp -learthcoords -Wl,-rpath,/opt/ros/fuerte/lib:/home/loki/Documents/ros_workspace/EarthCoords/lib 

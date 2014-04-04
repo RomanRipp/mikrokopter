@@ -1,0 +1,13 @@
+#ifndef _TOPICNAMES_H
+#define _TOPICNAMES_H
+
+//servises
+#define RENDEZVOUS_SERV "/rendezvous/point"
+//clients
+#define COMMON_POINT_CLT "/waypoint_command"
+//subsctiptions
+#define UGV_CURR_POSITION "/current_waypoint"
+//publishers
+#define COMMON_LAT "/rendevous/commonlat"
+#define COMMON_LON "rendezvous/commonlon"
+#endif /* _TOPICNAMES_H */
